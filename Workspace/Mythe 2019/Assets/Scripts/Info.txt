@@ -1,0 +1,4 @@
+Maak altijd een folder aan voor een product.
+Stel je voor, je maakt een healthbar aan:
+
+Scripts > UserInterface > Healthbar > je scripts
