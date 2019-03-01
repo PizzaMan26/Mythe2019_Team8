@@ -10,14 +10,24 @@ public class InputHandler : MonoBehaviour
 
     // Check for input
     void Update()
-    {   
-        // Check if the application is running on android
+    {
+        print(Input.touchCount);
+        /*// Check if the application is running on android
         if (Application.platform == RuntimePlatform.Android)
         {
-            //if () Walk(value);
-            //if () Jump();
-            //if () Attack1();
-            //if () Attack2();
+            print("android");
+            // Check for touch input
+            if (Input.touchCount > 0)
+            {
+                print(Input.touchCount);
+                //if () Walk(value);
+                //else Walk(0);
+
+                //if () Jump();
+                //if () Attack1();
+                //if () Attack2();
+            }
+            //else Walk(0);
         }
         // Check if an controller is connected
         else if (Input.GetJoystickNames().Length > 0)
@@ -36,6 +46,6 @@ public class InputHandler : MonoBehaviour
             if (Input.GetButtonDown("PC_Attack1")) Attack1();
             if (Input.GetButtonDown("PC_Attack2")) Attack2();
             if (Input.GetButtonDown("PC_Attack3")) Attack3();
-        }
+        }*/
     }
 }
