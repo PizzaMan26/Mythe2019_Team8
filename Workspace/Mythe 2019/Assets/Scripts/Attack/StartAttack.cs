@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class StartAttack : MonoBehaviour
 {
-    private GameObject AttackBox;
-    private float lightCD = 0.3f;
-    private float heavyCD = 0.9f;
-    private float curCD = 0f;
+    private GameObject _AttackBox;
+    private float _lightCD = 0.3f;
+    private float _heavyCD = 0.9f;
+    [HideInInspector]
+    public float curCD = 0f;
 
     [HideInInspector]
     public int curAttack = 0;
@@ -15,51 +16,49 @@ public class StartAttack : MonoBehaviour
     //1 = light
     //2 = heavy
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        AttackBox = transform.GetChild(0).gameObject;
+        _AttackBox = transform.GetChild(0).gameObject;//get's the attack hitbox
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (curCD <= 0 && Input.GetKeyDown(KeyCode.Mouse0))
+        if (curCD <= 0 && Input.GetKeyDown(KeyCode.Mouse0))//Light attack
         {
-            Debug.Log("kaas");
             LightAttack();
-            curCD = lightCD;
+            curCD = _lightCD;
             curAttack = 1;
         }
 
-        if (curCD <= 0 && Input.GetKeyDown(KeyCode.Mouse1))
+        if (curCD <= 0 && Input.GetKeyDown(KeyCode.Mouse1))//Heavy attack
         {
-            Debug.Log("spagetti cheese");
             HeavyAttack();
-            curCD = heavyCD;
+            curCD = _heavyCD;
             curAttack = 2;
         }
 
 
-        if (curCD > 0)
+        if (curCD > 0)//countdown timer
         {
             curCD = curCD - Time.deltaTime;
-            if (AttackBox.activeSelf && curCD <= 0.2f)
+            if (_AttackBox.activeSelf && curCD <= 0.2f)//stop attacking
             {
-                AttackBox.SetActive(false);
+                _AttackBox.SetActive(false);
                 curAttack = 0;
             }
         }
     }
 
-
+    //enables attack hitbox
     private void LightAttack()
     {
-        AttackBox.SetActive(true);
+        _AttackBox.SetActive(true);
     }
 
     private void HeavyAttack()
     {
-        AttackBox.SetActive(true);
+        _AttackBox.SetActive(true);
     }
 }

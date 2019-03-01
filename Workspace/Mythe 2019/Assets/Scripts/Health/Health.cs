@@ -6,12 +6,11 @@ public class Health : MonoBehaviour
 {
     private int _health = 100;
 
-    public void DealDamage(int damage)
+    public void DealDamage(int damage)//deals damage to object
     {
         _health = _health - damage;
-        Debug.Log("oof " + damage);
 
-        if(_health <= 0)
+        if(_health <= 0)//wasted
         {
             Debug.Log("RIP in perpperonies");
         }

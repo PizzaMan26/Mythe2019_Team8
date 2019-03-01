@@ -5,8 +5,8 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
 
-    private int lightDamage = 15;
-    private int heavyDamage = 30;
+    private int _lightDamage = 15;
+    private int _heavyDamage = 30;
 
     // Start is called before the first frame update
     void Start()
@@ -22,18 +22,18 @@ public class Attack : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)//send attack to the object that got hit
     {
         int curAttack = GetComponentInParent<StartAttack>().curAttack;
         if (col.tag == "Hitbox" && curAttack == 1)
         {
-            col.SendMessage("DealDamage", lightDamage);
+            col.SendMessage("DealDamage", _lightDamage);
             
         }
 
         if (col.tag == "Hitbox" && curAttack == 2)
         {
-            col.SendMessage("DealDamage", heavyDamage);
+            col.SendMessage("DealDamage", _heavyDamage);
         }
     }
 }
