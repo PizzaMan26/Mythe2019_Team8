@@ -32,7 +32,7 @@ public class InputHandler : MonoBehaviour
         else
         {
             Walk(Input.GetAxis("PC_Horizontal"));
-            if (Input.GetButtonDown("PC_Jump")) print("jump");
+            if (Input.GetButtonDown("PC_Jump")) Jump();
             if (Input.GetButtonDown("PC_Attack1")) Attack1();
             if (Input.GetButtonDown("PC_Attack2")) Attack2();
             if (Input.GetButtonDown("PC_Attack3")) Attack3();
