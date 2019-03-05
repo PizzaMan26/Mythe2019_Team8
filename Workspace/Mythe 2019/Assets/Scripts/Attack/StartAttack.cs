@@ -16,10 +16,10 @@ public class StartAttack : MonoBehaviour
     //1 = light
     //2 = heavy
 
-
     void Start()
     {
         _AttackBox = transform.GetChild(0).gameObject;//get's the attack hitbox
+        
     }
 
 
@@ -56,9 +56,11 @@ public class StartAttack : MonoBehaviour
     {
         _AttackBox.SetActive(true);
     }
-
     private void HeavyAttack()
     {
         _AttackBox.SetActive(true);
     }
+
+
+   
 }

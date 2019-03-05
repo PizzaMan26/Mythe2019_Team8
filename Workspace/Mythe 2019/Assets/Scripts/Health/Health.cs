@@ -5,6 +5,12 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     private int _health = 100;
+    private Rigidbody2D _rb;
+
+    void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();//get's the rigidbody2D
+    }
 
     public void DealDamage(int damage)//deals damage to object
     {
@@ -16,5 +22,11 @@ public class Health : MonoBehaviour
         }
     }
 
-    
+    public void OnHit(float force)//knockup for juggling
+    {
+        Vector2 push = new Vector2(Input.GetAxis("Horizontal"), force);
+        _rb.AddForce(push);
+    }
+
+
 }

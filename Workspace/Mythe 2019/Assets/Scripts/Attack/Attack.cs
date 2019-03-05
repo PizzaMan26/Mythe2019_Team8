@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    public float Lforce = 0;//light attack force
+    public float Hforce = 0;//heavy attack force
 
     private int _lightDamage = 15;
     private int _heavyDamage = 30;
@@ -28,12 +30,13 @@ public class Attack : MonoBehaviour
         if (col.tag == "Hitbox" && curAttack == 1)
         {
             col.SendMessage("DealDamage", _lightDamage);
-            
+            col.gameObject.SendMessage("OnHit",Lforce);
         }
 
         if (col.tag == "Hitbox" && curAttack == 2)
         {
             col.SendMessage("DealDamage", _heavyDamage);
+            col.gameObject.SendMessage("OnHit",Hforce);
         }
     }
 }

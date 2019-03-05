@@ -9,6 +9,7 @@ public class Dash : MonoBehaviour
     public float force = 0;
     public float cooldown = 1f;
     private float _CD;
+    private bool _isDashing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,15 +27,18 @@ public class Dash : MonoBehaviour
     {
         _CD -= Time.deltaTime;
         if (GetComponent<StartAttack>().curCD <= 0) {
+            _isDashing = false;
             if (Input.GetKeyDown(KeyCode.E) && _CD <= 0)
             {
                 _rb.AddForce(transform.right * force);
                 _CD = cooldown;
+                _isDashing = true;
             }
             else if (Input.GetKeyDown(KeyCode.Q) && _CD <= 0)
             {
                 _rb.AddForce(transform.right * -force);
                 _CD = cooldown;
+                _isDashing = true;
             }
         }
     }
