@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - InputHandler
+  - InputLeft
+  - InputRight
+  - Canvas
   layers:
   - Default
   - TransparentFX

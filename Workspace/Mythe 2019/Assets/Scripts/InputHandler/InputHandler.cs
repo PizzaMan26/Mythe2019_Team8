@@ -5,83 +5,42 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public event Action Jump, Attack1, Attack2, Pause;
+    public event Action Jump, Attack1, Attack2, Dash, Pause;
     public event Action<float> Walk;
 
-    private GameObject Left, Right;
+    private bool Left = false, Right = false;
 
-    void Start()
-    {
-        Left = GameObject.FindWithTag("InputLeft");
-        Right = GameObject.FindWithTag("InputRight");
-    }
 
     // Check for input
     void Update()
     {
-        if (Input.touchCount > 0)
+        if(Left != Right)
         {
-            print(Input.touchCount);
-            // if the player holds the left or right button
-            for(int i = 0; i < Input.touchCount; i++)
-            {
-                // check if the touch potition
-                /*if() // check with pythagoras
-                {
-
-                }*/
-            }
-
+            if (Left) Walk(-1);
+            else if (Right) Walk(1);
         }
+    }
 
-        /*// Check if the application is running on android
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            print("android");
-            // Check for touch input
-            if (Input.touchCount > 0)
-            {
-                print(Input.touchCount);
-                //if () Walk(value);
-                //else Walk(0);
+    // Check which direction the player needs to move to
+    public void InputLeftOn()
+    {
+        Left = true;
+    }
+    public void InputLeftOff()
+    {
+        Left = false;
+    }
 
-                //if () Jump();
-                //if () Attack1();
-                //if () Attack2();
-            }
-            //else Walk(0);
-        }
-        // Check if an controller is connected
-        else if (Input.GetJoystickNames().Length > 0)
-        {
-            Walk(Input.GetAxis("C_Horizontal"));
-            if (Input.GetButtonDown("C_Jump")) Jump();
-            if (Input.GetButtonDown("C_Attack1")) Attack1();
-            if (Input.GetButtonDown("C_Attack2")) Attack2();
-            if (Input.GetButtonDown("C_Attack3")) Attack3();
-        }
-        // If the application is not running on android, and there is no controller connected, use PC controls
-        else
-        {
-            Walk(Input.GetAxis("PC_Horizontal"));
-            if (Input.GetButtonDown("PC_Jump")) print("jump");
-            if (Input.GetButtonDown("PC_Attack1")) Attack1();
-            if (Input.GetButtonDown("PC_Attack2")) Attack2();
-            if (Input.GetButtonDown("PC_Attack3")) Attack3();
-        }*/
+    public void InputRightOn()
+    {
+        Right = true;
+    }
+    public void InputRightOff()
+    {
+        Right = false;
     }
 
     // Send delegates
-    public void InputLeft()
-    {
-        Walk(-1);
-    }
-
-    public void InputRight()
-    {
-        Walk(1);
-    }
-
     public void InputJump()
     {
         Jump();
@@ -95,6 +54,11 @@ public class InputHandler : MonoBehaviour
     public void InputAttack2()
     {
         Attack2();
+    }
+
+    public void InputDash()
+    {
+        Dash();
     }
 
     public void InputPause()
