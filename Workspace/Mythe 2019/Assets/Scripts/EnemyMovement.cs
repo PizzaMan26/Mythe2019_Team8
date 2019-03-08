@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
-{
-    private TestPlayerMovement tpm = new TestPlayerMovement();
+{ 
 
     public GameObject target;
 
@@ -34,19 +33,27 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckForPlayer();
+        
     }
 
     public void CheckForPlayer()
     {
 
-        if (_enemyLayer == tpm.getLayer)
+        if (_enemyLayer == 0)
         {
             Vector3 pos = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 
             transform.position = Vector3.MoveTowards(transform.position, pos, .05f);
         }
 
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "Player")
+        {
+            CheckForPlayer();
+        }
     }
 
 }
