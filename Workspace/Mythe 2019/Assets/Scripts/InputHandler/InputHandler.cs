@@ -14,12 +14,9 @@ public class InputHandler : MonoBehaviour
 
     void Update()
     {
-        if(Left != Right)
-        {
-            if (Left) Walk(-1);
-            else if (Right) Walk(1);
-            else if (!Left && !Right) Walk(0);
-        }
+        if (!Left && !Right) Walk(0);
+        else if (Left) Walk(-1);
+        else if (Right) Walk(1);
     }
 
     // Check which direction the player needs to move to

@@ -1247,6 +1247,16 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 3.3710604
       objectReference: {fileID: 0}
+    - target: {fileID: 7391746434951541399, guid: 7b75304b7e3154b4e99421b585e1466d,
+        type: 3}
+      propertyPath: Lforce
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391746434951541399, guid: 7b75304b7e3154b4e99421b585e1466d,
+        type: 3}
+      propertyPath: Hforce
+      value: 9000
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7391746434626648441, guid: 7b75304b7e3154b4e99421b585e1466d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7b75304b7e3154b4e99421b585e1466d, type: 3}
@@ -1284,7 +1294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550f77a5d0d19314080b6736db0597f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 20000
+  jumpForce: 1750
 --- !u!4 &795854975 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7391746434626648445, guid: 7b75304b7e3154b4e99421b585e1466d,
