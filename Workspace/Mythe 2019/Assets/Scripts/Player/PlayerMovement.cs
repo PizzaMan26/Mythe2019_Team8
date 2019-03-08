@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float jumpForce = 500;
 
+    private bool isMoving = false;
+
     private Rigidbody2D rb;
     private InputHandler inputHandler;
 
@@ -33,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
             if (hit.collider.gameObject.tag == "Ground")
             {
                 canJump = true;
+                SlowDown();
             }
         }
         else //when your the raycast doesn't hit anything it wont't go of
@@ -40,6 +43,24 @@ public class PlayerMovement : MonoBehaviour
             canJump = false;
         }
 
+    }
+
+    private void StopMoving()
+    {
+
+    }
+
+    //slows down if player goes to fast and hits the ground
+    private void SlowDown()
+    {
+        if (rb.velocity.x > 20)
+        {
+            rb.AddForce(new Vector3(-1000, 0, 0));
+        }
+        else if (rb.velocity.x < -20)
+        {
+            rb.AddForce(new Vector3(1000, 0, 0));
+        }
     }
 
     private void JumpUp()
@@ -53,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walk(float amount)
     {
+        isMoving = true;
         //checks if the force isn't to high enough
         if (rb.velocity.x < 20 && rb.velocity.x > -20)
         {
