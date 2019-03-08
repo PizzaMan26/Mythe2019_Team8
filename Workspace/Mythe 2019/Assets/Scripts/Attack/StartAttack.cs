@@ -16,29 +16,22 @@ public class StartAttack : MonoBehaviour
     //1 = light
     //2 = heavy
 
+    private InputHandler inputHandler;
+
     void Start()
     {
         _AttackBox = transform.GetChild(0).gameObject;//get's the attack hitbox
-        
+
+        inputHandler = GameObject.FindWithTag("InputHandler").GetComponent<InputHandler>();
+        //delicate's from the inputHandler
+        inputHandler.Attack1 += LightAttack;
+        inputHandler.Attack2 += HeavyAttack;
+
     }
 
 
     void Update()
     {
-        if (curCD <= 0 && Input.GetKeyDown(KeyCode.Mouse0))//Light attack
-        {
-            LightAttack();
-            curCD = _lightCD;
-            curAttack = 1;
-        }
-
-        if (curCD <= 0 && Input.GetKeyDown(KeyCode.Mouse1))//Heavy attack
-        {
-            HeavyAttack();
-            curCD = _heavyCD;
-            curAttack = 2;
-        }
-
 
         if (curCD > 0)//countdown timer
         {
@@ -51,14 +44,26 @@ public class StartAttack : MonoBehaviour
         }
     }
 
-    //enables attack hitbox
-    private void LightAttack()
+    
+    private void LightAttack()//Light attack
     {
-        _AttackBox.SetActive(true);
+        if (curCD <= 0)
+        {
+            curCD = _lightCD;
+            curAttack = 1;
+            _AttackBox.SetActive(true);//enables attack hitbox
+        }
+        
     }
-    private void HeavyAttack()
+    private void HeavyAttack()//Heavy attack
     {
-        _AttackBox.SetActive(true);
+        
+        if (curCD <= 0)
+        {           
+            curCD = _heavyCD;
+            curAttack = 2;
+            _AttackBox.SetActive(true);//enables attack hitbox
+        }
     }
 
 

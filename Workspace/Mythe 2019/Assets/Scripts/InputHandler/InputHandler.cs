@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public event Action Jump, Attack1, Attack2, Dash, Pause;
-    public event Action<float> Walk;
+    public event Action Jump, Attack1, Attack2, Pause;
+    public event Action<float> Walk, Dash;
 
     private bool Left = false, Right = false;
+    private float Direction = 1;
 
 
     void Update()
@@ -17,6 +18,7 @@ public class InputHandler : MonoBehaviour
         {
             if (Left) Walk(-1);
             else if (Right) Walk(1);
+            else if (!Left && !Right) Walk(0);
         }
     }
 
@@ -24,6 +26,7 @@ public class InputHandler : MonoBehaviour
     public void InputLeftOn()
     {
         Left = true;
+        Direction = -1;
     }
     public void InputLeftOff()
     {
@@ -33,6 +36,7 @@ public class InputHandler : MonoBehaviour
     public void InputRightOn()
     {
         Right = true;
+        Direction = 1;
     }
     public void InputRightOff()
     {
@@ -57,7 +61,7 @@ public class InputHandler : MonoBehaviour
 
     public void InputDash()
     {
-        Dash();
+        Dash(Direction);
     }
 
     public void InputPause()

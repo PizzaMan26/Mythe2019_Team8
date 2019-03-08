@@ -11,35 +11,45 @@ public class Dash : MonoBehaviour
     private float _CD;
     private bool _isDashing = false;
 
+    private InputHandler inputHandler;
+
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+
+        inputHandler = GameObject.FindWithTag("InputHandler").GetComponent<InputHandler>();
+        inputHandler.Dash += DashTowards;
     }
 
     // Update is called once per frame
     void Update()
     {
-        DashSys();
+        DashCooldown();
     }
 
-    private void DashSys()
+    private void DashCooldown()
     {
         _CD -= Time.deltaTime;
         if (GetComponent<StartAttack>().curCD <= 0) {
-            _isDashing = false;
-            if (Input.GetKeyDown(KeyCode.E) && _CD <= 0)
-            {
-                _rb.AddForce(transform.right * force);
-                _CD = cooldown;
-                _isDashing = true;
-            }
-            else if (Input.GetKeyDown(KeyCode.Q) && _CD <= 0)
-            {
-                _rb.AddForce(transform.right * -force);
-                _CD = cooldown;
-                _isDashing = true;
-            }
+            _isDashing = false;                       
+        }
+    }
+
+
+    private void DashTowards(float value)
+    {
+        if (_CD <= 0 && value == 1) // dash left
+        {
+            _rb.AddForce(transform.right * force);
+            _CD = cooldown;
+            _isDashing = true;
+        }
+        else if (_CD <= 0 && value == -1)
+        {
+            _rb.AddForce(transform.right * -force);
+            _CD = cooldown;
+            _isDashing = true;
         }
     }
 }
