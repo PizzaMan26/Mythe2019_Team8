@@ -1266,8 +1266,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 613435882}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &795854969
-CircleCollider2D:
+--- !u!70 &795854969
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1279,9 +1279,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3.4
+  m_Offset: {x: -0.10304451, y: 0.025721073}
+  m_Size: {x: 5.4217415, y: 5.788558}
+  m_Direction: 0
 --- !u!114 &795854970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550f77a5d0d19314080b6736db0597f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 1750
+  jumpForce: 20000
 --- !u!4 &795854975 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7391746434626648445, guid: 7b75304b7e3154b4e99421b585e1466d,

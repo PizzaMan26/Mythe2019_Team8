@@ -28,9 +28,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     { // still needto make more raycast to check if he can jump even if it is not directly above an object
         StopMoving();
-        print(isMoving);
-        RaycastHit2D hit = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 3.65f, transform.position.z), transform.TransformDirection(Vector3.down), .3f);
-        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y - 3.65f, transform.position.z), transform.TransformDirection(Vector3.down) * .3f, Color.yellow);
+        RaycastHit2D hit = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 3f, transform.position.z), transform.TransformDirection(Vector3.down), .3f);
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y - 3f, transform.position.z), transform.TransformDirection(Vector3.down) * .3f, Color.yellow);
         if (hit.collider != null)//check the raycast hits anything
         {
             //checks if on the ground
