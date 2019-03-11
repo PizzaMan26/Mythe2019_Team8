@@ -10,20 +10,6 @@ public class Attack : MonoBehaviour
     private int _lightDamage = 15;
     private int _heavyDamage = 30;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-
     private void OnTriggerEnter2D(Collider2D col)//send attack to the object that got hit
     {
         int curAttack = GetComponentInParent<StartAttack>().curAttack;
