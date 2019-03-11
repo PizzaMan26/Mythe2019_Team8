@@ -22,10 +22,15 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void OnHit(float force)//knockup for juggling
+    public void OnHit(float force)//knockup for throwing in the air
     {
         Vector2 push = new Vector2(Input.GetAxis("Horizontal"), force);
         _rb.AddForce(push);
+    }
+
+    public void Juggle(float amount)//resets velocity for juggling
+    {
+        _rb.velocity = new Vector2(0, amount);
     }
 
 

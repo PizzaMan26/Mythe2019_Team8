@@ -10,19 +10,6 @@ public class Attack : MonoBehaviour
     private int _lightDamage = 15;
     private int _heavyDamage = 30;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 
     private void OnTriggerEnter2D(Collider2D col)//send attack to the object that got hit
     {
@@ -30,7 +17,7 @@ public class Attack : MonoBehaviour
         if (col.tag == "Hitbox" && curAttack == 1)
         {
             col.SendMessage("DealDamage", _lightDamage);
-            col.gameObject.SendMessage("OnHit",Lforce);
+            col.gameObject.SendMessage("Juggle", Lforce);
         }
 
         if (col.tag == "Hitbox" && curAttack == 2)

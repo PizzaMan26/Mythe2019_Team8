@@ -1200,7 +1200,7 @@ PrefabInstance:
     - target: {fileID: 7391746434626648443, guid: 7b75304b7e3154b4e99421b585e1466d,
         type: 3}
       propertyPath: m_CollisionDetection
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7391746434626648443, guid: 7b75304b7e3154b4e99421b585e1466d,
         type: 3}
@@ -1479,6 +1479,16 @@ PrefabInstance:
     - target: {fileID: 2915615969639638714, guid: 0b467cd89a7b7a04b91163a8cad9e7be,
         type: 3}
       propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915615969639638712, guid: 0b467cd89a7b7a04b91163a8cad9e7be,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915615969639638712, guid: 0b467cd89a7b7a04b91163a8cad9e7be,
+        type: 3}
+      propertyPath: m_GravityScale
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
