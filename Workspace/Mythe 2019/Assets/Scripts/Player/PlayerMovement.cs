@@ -27,8 +27,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     { // still needto make more raycast to check if he can jump even if it is not directly above an object
-        RaycastHit2D hit = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 3.65f, transform.position.z), transform.TransformDirection(Vector3.down), .3f);
-        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y - 3.65f, transform.position.z), transform.TransformDirection(Vector3.down) * .3f, Color.yellow);
+        StopMoving();
+        RaycastHit2D hit = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 3f, transform.position.z), transform.TransformDirection(Vector3.down), .3f);
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y - 3f, transform.position.z), transform.TransformDirection(Vector3.down) * .3f, Color.yellow);
         if (hit.collider != null)//check the raycast hits anything
         {
             //checks if on the ground
@@ -47,7 +48,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopMoving()
     {
-
+        if (isMoving == false)
+        {
+            if (rb.velocity.x > 0)
+            {
+                rb.AddForce(new Vector3(-200, 0, 0));
+            }
+            if (rb.velocity.x < 0)
+            {
+                rb.AddForce(new Vector3(200, 0, 0));
+            }
+        }
     }
 
     //slows down if player goes to fast and hits the ground
@@ -74,7 +85,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walk(float amount)
     {
-        isMoving = true;
+        if (amount == 0)
+        {
+            isMoving = false;
+        }
+        else
+        {
+            isMoving = true;
+        }
         //checks if the force isn't to high enough
         if (rb.velocity.x < 20 && rb.velocity.x > -20)
         {
