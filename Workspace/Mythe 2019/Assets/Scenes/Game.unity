@@ -472,7 +472,7 @@ PrefabInstance:
     - target: {fileID: 6834727858542866854, guid: f786fa42acfc87345a69df609cce6be4,
         type: 3}
       propertyPath: m_Sprite
-      value:
+      value: 
       objectReference: {fileID: 21300000, guid: d26d4024260c0b64fbbf20ef8a081ce9,
         type: 3}
     - target: {fileID: 6834727858542866854, guid: f786fa42acfc87345a69df609cce6be4,
@@ -533,7 +533,7 @@ PrefabInstance:
     - target: {fileID: 6834727858578012088, guid: f786fa42acfc87345a69df609cce6be4,
         type: 3}
       propertyPath: m_Sprite
-      value:
+      value: 
       objectReference: {fileID: 21300000, guid: b107e0826b0cc6b4c985500a9274242c,
         type: 3}
     - target: {fileID: 6834727858578012088, guid: f786fa42acfc87345a69df609cce6be4,
@@ -544,7 +544,7 @@ PrefabInstance:
     - target: {fileID: 6834727859079852764, guid: f786fa42acfc87345a69df609cce6be4,
         type: 3}
       propertyPath: m_Sprite
-      value:
+      value: 
       objectReference: {fileID: 21300000, guid: f88118098cadc8d4b88853c17e73cf16,
         type: 3}
     - target: {fileID: 6834727859079852764, guid: f786fa42acfc87345a69df609cce6be4,
@@ -610,7 +610,7 @@ PrefabInstance:
     - target: {fileID: 6834727859410764311, guid: f786fa42acfc87345a69df609cce6be4,
         type: 3}
       propertyPath: m_Sprite
-      value:
+      value: 
       objectReference: {fileID: 21300000, guid: b107e0826b0cc6b4c985500a9274242c,
         type: 3}
     - target: {fileID: 6834727859410764311, guid: f786fa42acfc87345a69df609cce6be4,
@@ -681,7 +681,7 @@ PrefabInstance:
     - target: {fileID: 6834727859424707033, guid: f786fa42acfc87345a69df609cce6be4,
         type: 3}
       propertyPath: m_Sprite
-      value:
+      value: 
       objectReference: {fileID: 21300000, guid: b107e0826b0cc6b4c985500a9274242c,
         type: 3}
     - target: {fileID: 6834727859424707033, guid: f786fa42acfc87345a69df609cce6be4,
@@ -692,7 +692,7 @@ PrefabInstance:
     - target: {fileID: 6834727860116698748, guid: f786fa42acfc87345a69df609cce6be4,
         type: 3}
       propertyPath: m_Sprite
-      value:
+      value: 
       objectReference: {fileID: 21300000, guid: c2cc97268245ad343abf52ff1baec371,
         type: 3}
     - target: {fileID: 6834727860116698748, guid: f786fa42acfc87345a69df609cce6be4,
@@ -1070,8 +1070,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8bb6269ca1def0409eeba05182c11a7, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &587771560 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6834727859410764306, guid: f786fa42acfc87345a69df609cce6be4,
@@ -1088,8 +1088,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 2
     callback:
@@ -1103,7 +1103,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -1184,7 +1184,7 @@ PrefabInstance:
     - target: {fileID: 7391746434626648446, guid: 7b75304b7e3154b4e99421b585e1466d,
         type: 3}
       propertyPath: m_Sprite
-      value:
+      value: 
       objectReference: {fileID: 21300000, guid: b7bc189f59f43eb44b9337be5c99def7,
         type: 3}
     - target: {fileID: 7391746434626648443, guid: 7b75304b7e3154b4e99421b585e1466d,
@@ -1250,12 +1250,12 @@ PrefabInstance:
     - target: {fileID: 7391746434951541399, guid: 7b75304b7e3154b4e99421b585e1466d,
         type: 3}
       propertyPath: Lforce
-      value: 5000
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7391746434951541399, guid: 7b75304b7e3154b4e99421b585e1466d,
         type: 3}
       propertyPath: Hforce
-      value: 9000
+      value: 20000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7391746434626648441, guid: 7b75304b7e3154b4e99421b585e1466d, type: 3}
@@ -1292,8 +1292,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 550f77a5d0d19314080b6736db0597f6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   jumpForce: 20000
 --- !u!4 &795854975 stripped
 Transform:
@@ -1317,8 +1317,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 2
     callback:
@@ -1332,7 +1332,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -1366,8 +1366,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1385,8 +1385,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
@@ -1721,8 +1721,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 2
     callback:
@@ -1736,7 +1736,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -1758,8 +1758,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 2
     callback:
@@ -1773,7 +1773,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -1795,8 +1795,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Delegates:
   - eventID: 2
     callback:
@@ -1810,7 +1810,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument:
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
