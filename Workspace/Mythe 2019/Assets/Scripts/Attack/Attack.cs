@@ -16,14 +16,14 @@ public class Attack : MonoBehaviour
         int curAttack = GetComponentInParent<StartAttack>().curAttack;
         if (col.tag == "Hitbox" && curAttack == 1)
         {
-            col.SendMessage("DealDamage", _lightDamage);
-            col.gameObject.SendMessage("Juggle", Lforce);
+            col.GetComponent<Health>().Juggle(Lforce);
+            col.GetComponent<Health>().DealDamage(_lightDamage);
         }
 
         if (col.tag == "Hitbox" && curAttack == 2)
         {
-            col.SendMessage("DealDamage", _heavyDamage);
-            col.gameObject.SendMessage("OnHit",Hforce);
+            col.GetComponent<Health>().OnHit(Hforce);
+            col.GetComponent<Health>().DealDamage(_heavyDamage);
         }
     }
 }

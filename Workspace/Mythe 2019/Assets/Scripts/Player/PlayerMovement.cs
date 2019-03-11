@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //[SerializeField]
-    //private float movementspeed = 0;
+
     [SerializeField]
     private float jumpForce = 500;
 
     private bool isMoving = false;
+    private string collidingTarget;
 
     private Rigidbody2D rb;
     private InputHandler inputHandler;
+    private GameObject GameManager;
 
     private bool canJump = false;
 
     void Start()
     {
+        GameManager = GameObject.Find("GameManager");
         inputHandler = GameObject.FindWithTag("InputHandler").GetComponent<InputHandler>();
         rb = GetComponent<Rigidbody2D>();
         //delicate's from the inputHandler
@@ -26,20 +28,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update()
-    { // still needto make more raycast to check if he can jump even if it is not directly above an object
+    { 
         StopMoving();
-        RaycastHit2D hit = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 3f, transform.position.z), transform.TransformDirection(Vector3.down), .3f);
-        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y - 3f, transform.position.z), transform.TransformDirection(Vector3.down) * .3f, Color.yellow);
-        if (hit.collider != null)//check the raycast hits anything
+
+        collidingTarget = GameManager.GetComponent<IsOnGround>().CheckOnGround(transform, 3f);
+        if (collidingTarget != null)
         {
-            //checks if on the ground
-            if (hit.collider.gameObject.tag == "Ground")
-            {
-                canJump = true;
-                SlowDown();
-            }
+            canJump = true;
+            SlowDown();
         }
-        else //when your the raycast doesn't hit anything it wont't go of
+        else
         {
             canJump = false;
         }
