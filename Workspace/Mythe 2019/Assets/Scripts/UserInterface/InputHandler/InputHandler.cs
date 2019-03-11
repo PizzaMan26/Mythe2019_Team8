@@ -5,21 +5,22 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public event Action Jump, Attack1, Attack2, Pause;
+    // Delegates
+    public event Action Jump, Attack1, Attack2;
+    public event Action<bool> Pause;
     public event Action<float> Walk, Dash;
 
-    private bool Left = false, Right = false;
+    // Variables to support the delegates
+    private bool Left = false, Right = false, Paused = false;
     private float Direction = 1;
 
 
     void Update()
     {
-        if(Left != Right)
-        {
-            if (Left) Walk(-1);
-            else if (Right) Walk(1);
-            else if (!Left && !Right) Walk(0);
-        }
+        // Check if the player is moving
+        if (Left) Walk(-1);
+        else if (Right) Walk(1);
+        else if (!Left && !Right) Walk(0);
     }
 
     // Check which direction the player needs to move to
@@ -66,7 +67,8 @@ public class InputHandler : MonoBehaviour
 
     public void InputPause()
     {
-        Pause();
+        Paused = !Paused;
+        Pause(Paused);
     }
 
 }
