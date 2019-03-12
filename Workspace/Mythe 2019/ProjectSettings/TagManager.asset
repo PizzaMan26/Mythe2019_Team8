@@ -11,6 +11,7 @@ TagManager:
   - InputHandler
   - Hitbox
   - PauseMenu
+  - AudioManager
   layers:
   - Default
   - TransparentFX
