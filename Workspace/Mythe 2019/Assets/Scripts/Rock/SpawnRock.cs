@@ -21,7 +21,7 @@ public class SpawnRock : MonoBehaviour
         if (rockTimer <= 0)//spawns rock and resets timer
         {
             float x = Random.Range(PointA.transform.position.x, PointB.transform.position.x);
-            Instantiate(Rock, new Vector3(x, 0, 0), Quaternion.identity);
+            Instantiate(Rock, new Vector3(x, transform.position.y, 0), Quaternion.identity);
             rockTimer = spawnSpeed;
         }
         else if (rockTimer >= 0)//counts down
