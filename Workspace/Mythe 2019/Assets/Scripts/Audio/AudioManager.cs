@@ -30,7 +30,6 @@ public class AudioManager : MonoBehaviour
             PlayerPrefs.SetString("Audio_Muted_FX", "False");
             Muted_FX_Status = false;
         }
-
         Mute_Music(Muted_Music_Status);
         Mute_FX(Muted_FX_Status);
     }

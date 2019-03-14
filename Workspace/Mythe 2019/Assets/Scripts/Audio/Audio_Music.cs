@@ -5,23 +5,43 @@ using UnityEngine;
 public class Audio_Music : MonoBehaviour
 {
     private AudioManager audioManager;
-    private float volume;
+    private float volume = 1;
+    private bool whatTheme = false;
+
+    [SerializeField]
+    private AudioSource Source1, Source2;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        volume = GetComponent<AudioSource>().volume;
         audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
         audioManager.Mute_Music += Mute;
-        //audioManager.Change_Theme += ;
+        audioManager.Change_Theme += SwitchTheme;
     }
 
     private void Mute(bool value)
     {
-        if(value) GetComponent<AudioSource>().volume = 0;
-        else GetComponent<AudioSource>().volume = volume;
+        Source1.mute = value;
+        Source2.mute = value;
     }
 
+    void Update()
+    {
+        if (whatTheme == true)
+        {
+            Source1.volume -= 0.01f;
+            if (Source2.volume < volume) Source2.volume += 0.01f;
+        }
+        else
+        {
+            if (Source1.volume < volume) Source1.volume += 0.01f;
+            Source2.volume -= 0.01f;
+        }
+    }
 
+    private void SwitchTheme()
+    {
+        whatTheme = !whatTheme;
+    }
 
 }
