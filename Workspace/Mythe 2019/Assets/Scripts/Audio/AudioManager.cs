@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Delegates
+    // Delegates Mute
     public event Action<bool> Mute_Music, Mute_FX;
+    //Delegates Background Music
     public event Action Change_Theme;
+    //Delegates Player movement
+    public event Action Player_Land;
 
     private bool Muted_Music_Status, Muted_FX_Status;
     
@@ -57,5 +60,11 @@ public class AudioManager : MonoBehaviour
     public void ChangeTheme()
     {
         Change_Theme();
+    }
+
+    public void PlayerLand()
+    {
+        Player_Land();
+        print("landed in audioManager");
     }
 }
