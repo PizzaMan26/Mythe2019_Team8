@@ -5,6 +5,7 @@ using UnityEngine;
 public class StartAttack : MonoBehaviour
 {
     private GameObject _AttackBox;
+    private GameObject GameManager;
     private Rigidbody2D rb;
     private float _lightCD = 0.3f;
     private float _heavyCD = 0.5f;
@@ -21,6 +22,7 @@ public class StartAttack : MonoBehaviour
 
     void Start()
     {
+        GameManager = GameObject.Find("GameManager");
         _AttackBox = transform.GetChild(0).gameObject;//get's the attack hitbox
         rb = GetComponent<Rigidbody2D>();//get's the rigidbody
 
@@ -54,7 +56,10 @@ public class StartAttack : MonoBehaviour
             curCD = _lightCD;
             curAttack = 1;
             _AttackBox.SetActive(true);//enables attack hitbox
-            rb.velocity = new Vector2(0,5);
+            if (GameManager.GetComponent<IsOnGround>().CheckOnGround(transform, 3f) == null)
+            {
+                rb.velocity = new Vector2(0, 5);
+            }
         }
         
     }

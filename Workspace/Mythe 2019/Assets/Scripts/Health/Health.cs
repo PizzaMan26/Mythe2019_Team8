@@ -6,9 +6,11 @@ public class Health : MonoBehaviour
 {
     private int _health = 100;
     private Rigidbody2D _rb;
+    private GameObject GameManager;
 
     void Start()
     {
+        GameManager = GameObject.Find("GameManager");
         _rb = GetComponent<Rigidbody2D>();//get's the rigidbody2D
     }
 
@@ -30,7 +32,10 @@ public class Health : MonoBehaviour
 
     public void Juggle(float amount)//resets velocity for juggling
     {
-        _rb.velocity = new Vector2(0, amount);
+        if (GameManager.GetComponent<IsOnGround>().CheckOnGround(transform, 3.5f) == null)
+        {
+            _rb.velocity = new Vector2(0, amount);
+        }
     }
 
 

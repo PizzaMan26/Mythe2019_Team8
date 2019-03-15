@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private TestPlayerMovement tpm = new TestPlayerMovement();
 
     public GameObject target;
+
+    private Health _enemyHealth;
 
 
 
@@ -23,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private float _enemySpeed = 4f;
+    public float _enemySpeed;
     private int _enemyLayer = 0;
     // Start is called before the first frame update
     void Start()
@@ -34,19 +35,30 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckForPlayer();
+
     }
 
     public void CheckForPlayer()
     {
-
-        if (_enemyLayer == tpm.getLayer)
+        if (_enemyLayer == 0)
         {
             Vector3 pos = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 
-            transform.position = Vector3.MoveTowards(transform.position, pos, .05f);
+            transform.position = Vector3.MoveTowards(transform.position, pos, _enemySpeed);
         }
-
     }
 
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            CheckForPlayer();
+        }
+    }
+
+
+    private void RunAway()
+    {
+        
+    }
 }
