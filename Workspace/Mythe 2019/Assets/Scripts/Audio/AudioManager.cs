@@ -65,6 +65,5 @@ public class AudioManager : MonoBehaviour
     public void PlayerLand()
     {
         Player_Land();
-        print("landed in audioManager");
     }
 }
