@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-
     public GameObject target;
 
     private Health _enemyHealth;
-
-
+    public float _enemySpeed;
+    private int _enemyLayer = 0;
 
     public int getEnemyLayer
     {
@@ -17,26 +16,12 @@ public class EnemyMovement : MonoBehaviour
         {
             return _enemyLayer;
         }
-
         set
         {
             _enemyLayer = value;
         }
     }
 
-    public float _enemySpeed;
-    private int _enemyLayer = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void CheckForPlayer()
     {
@@ -47,6 +32,7 @@ public class EnemyMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, pos, _enemySpeed);
         }
     }
+
 
     private void OnTriggerStay2D(Collider2D col)
     {
@@ -59,6 +45,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void RunAway()
     {
-        
+
     }
 }
+
