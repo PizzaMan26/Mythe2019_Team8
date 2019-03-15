@@ -22,7 +22,7 @@ public class TileSpawner : MonoBehaviour
         int temp = 1;
         for (int i = 0; i < activeLevels.Count; i++)
         {
-            
+
             switch (temp)
             {
                 case 1:
@@ -40,27 +40,27 @@ public class TileSpawner : MonoBehaviour
                     Instantiate(activeLevels[index], new Vector3(0, 0 + (activeLevels[index].transform.localScale.y * 0.25f) * index, 21), Quaternion.Euler(0f, -90f * index, 0f));
                     temp++;
                     break;
-            
+
                 case 4:
                     print(temp);
                     Instantiate(activeLevels[index], new Vector3(-(activeLevels[index].transform.localScale.x) * 0.5f, 0 + (activeLevels[index].transform.localScale.y * 0.25f) * index, activeLevels[index].transform.localScale.x * 0.5f), Quaternion.Euler(0f, -90f * index, 0f));
                     temp++;
-                break;
-        }
+                    break;
+            }
 
-        if (temp % 5 == 0)
+            if (temp % 5 == 0)
                 temp = 0;
 
 
-                index++;
+            index++;
 
         }
     }
-    
+
     void Update()
     {
         //if (Input.anyKeyDown)
-            StageUp();
+        StageUp();
     }
 
     void StageUp()
