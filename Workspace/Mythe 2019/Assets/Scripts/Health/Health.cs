@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private int _health = 100;
+    public int health = 100;
     private Rigidbody2D _rb;
+
+    private GameObject IF;
 
     void Start()
     {
@@ -14,9 +16,13 @@ public class Health : MonoBehaviour
 
     public void DealDamage(int damage)//deals damage to object
     {
-        _health = _health - damage;
+        if (!GetComponent<InvincibilityFrames>().isInvincible)
+        {
+            health = health - damage;
+        }
+        
 
-        if(_health <= 0)//wasted
+        if(health <= 0)//wasted
         {
             Debug.Log("RIP in perpperonies");
         }
