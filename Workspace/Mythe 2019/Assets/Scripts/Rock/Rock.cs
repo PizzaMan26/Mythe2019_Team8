@@ -8,13 +8,14 @@ public class Rock : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Ground")
+        if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Enemy")
         {
             Break();
         }
         if (col.gameObject.tag == "Player")
         {
             BonkPlayer(col.gameObject);
+            Break();
         }
     }
 
