@@ -5,16 +5,23 @@ using UnityEngine;
 public class Rock : MonoBehaviour
 {
     public int damage = 0;
+    public int damageToEnemy = 0;
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Ground")
+        if (col.gameObject.tag == "Ground" )
         {
             Break();
         }
         if (col.gameObject.tag == "Player")
         {
-            BonkPlayer(col.gameObject);
+            Bonk(col.gameObject, damage);
+            Break();
+        }
+        if (col.gameObject.tag == "Enemy")
+        {
+            Bonk(col.gameObject, damageToEnemy);
+            Break();
         }
     }
 
@@ -23,8 +30,8 @@ public class Rock : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void BonkPlayer(GameObject col)
+    private void Bonk(GameObject col, int dam)
     {
-        col.GetComponent<Health>().DealDamage(damage);
+        col.GetComponent<Health>().DealDamage(dam);
     }
 }
