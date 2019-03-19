@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Language : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private Languages language;
 
-    // Update is called once per frame
-    void Update()
+    [Header("Audio files, select accordingly to the selected language.")]
+
+    public AudioClip Attack, Back, Death;
+    
+    // Return language
+    public Languages GetLanguage()
     {
-        
+        return language;
     }
 }
