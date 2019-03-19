@@ -29,6 +29,11 @@ public class VoiceLines : MonoBehaviour
         return (Languages)Random.Range(0, enumCount);
     }
 
+    public void PlayRandom()
+    {
+        PlayLanguage(RandomLanguage(), "Attack");
+    }
+
     void PlayLanguage(Languages lang, string action)
     {
         int listId = -1;
