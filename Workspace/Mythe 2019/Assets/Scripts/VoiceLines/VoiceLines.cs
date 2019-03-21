@@ -17,14 +17,15 @@ public class VoiceLines : MonoBehaviour
     private int enumCount;
     private AudioSource source;
 
-    void Start()
+    void Awake()
     {
         enumCount = System.Enum.GetValues(typeof(Languages)).Length;
+        print(enumCount);
         source = GetComponent<AudioSource>();
     }
 
     // Return random enum
-    Languages RandomLanguage()
+    public Languages RandomLanguage()
     {
         return (Languages)Random.Range(0, enumCount);
     }
@@ -34,7 +35,7 @@ public class VoiceLines : MonoBehaviour
         PlayLanguage(RandomLanguage(), "Attack");
     }
 
-    void PlayLanguage(Languages lang, string action)
+    public void PlayLanguage(Languages lang, string action)
     {
         int listId = -1;
 
