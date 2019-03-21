@@ -8,7 +8,11 @@ public class Health : MonoBehaviour
     public int health = 100;
     public bool isPlayer = false;
     private Rigidbody2D _rb;
-    private GameObject GameManager;
+
+    private GameObject IF;
+
+    public event Action playerDead;
+    public event Action<int> playerHit;
 
     private GameObject IF;
 
@@ -17,7 +21,6 @@ public class Health : MonoBehaviour
 
     void Start()
     {
-        GameManager = GameObject.Find("GameManager");
         _rb = GetComponent<Rigidbody2D>();//get's the rigidbody2D
     }
 
@@ -43,18 +46,10 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void OnHit(float force)//knockup for throwing in the air
+    public void OnHit(float force)//knockup for juggling
     {
         Vector2 push = new Vector2(Input.GetAxis("Horizontal"), force);
         _rb.AddForce(push);
-    }
-
-    public void Juggle(float amount)//resets velocity for juggling
-    {
-        if (GameManager.GetComponent<IsOnGround>().CheckOnGround(transform, 3.5f) == null)
-        {
-            _rb.velocity = new Vector2(0, amount);
-        }
     }
 
 
