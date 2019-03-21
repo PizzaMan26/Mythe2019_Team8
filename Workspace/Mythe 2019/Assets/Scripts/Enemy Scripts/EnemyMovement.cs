@@ -8,28 +8,52 @@ public class EnemyMovement : MonoBehaviour
 
     private Health _enemyHealth;
     public float _enemySpeed;
-    private int _enemyLayer = 0;
+    private Rigidbody2D rb;
 
-    public int getEnemyLayer
+    private bool isMoving;
+
+    void Start()
     {
-        get
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        if (isMoving == false)
         {
-            return _enemyLayer;
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
-        set
-        {
-            _enemyLayer = value;
-        }
+
+        SlowDown();
     }
 
 
     public void CheckForPlayer()
     {
-        if (_enemyLayer == 0)
+        if(target.transform.position.x <= transform.position.x)
         {
-            Vector3 pos = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+            rb.AddForce(new Vector3(-30, 0, 0));
 
-            transform.position = Vector3.MoveTowards(transform.position, pos, _enemySpeed);
+            isMoving = true;
+        }
+
+        if (target.transform.position.x >= transform.position.x)
+        {
+            rb.AddForce(new Vector3(30, 0, 0));
+
+            isMoving = true;
+        }
+    }
+
+    private void SlowDown()
+    {
+        if (rb.velocity.x > 20)
+        {
+            rb.AddForce(new Vector3(-30, 0, 0));
+        }
+        else if (rb.velocity.x < -20)
+        {
+            rb.AddForce(new Vector3(30, 0, 0));
         }
     }
 
@@ -40,6 +64,11 @@ public class EnemyMovement : MonoBehaviour
         {
             CheckForPlayer();
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isMoving = false;
     }
 
 
