@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     { 
         StopMoving();
-        print(isMoving);
         audioManager.PlayerLand(isMoving);
 
         collidingTarget = GameManager.GetComponent<IsOnGround>().CheckOnGround(transform, 3f);

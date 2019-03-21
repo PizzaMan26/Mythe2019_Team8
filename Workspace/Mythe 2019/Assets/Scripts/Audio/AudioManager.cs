@@ -71,7 +71,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlayerLand(bool isMoving)
     {
-        print("in the audio Manager");
         Player_Run(isMoving);
     }
 }

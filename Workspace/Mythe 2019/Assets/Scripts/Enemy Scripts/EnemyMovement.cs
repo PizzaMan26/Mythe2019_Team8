@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    private IsOnGround isOnGround;
+
     public GameObject target;
 
     private Health _enemyHealth;
@@ -14,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
+        isOnGround = GameObject.Find("GameManager").GetComponent<IsOnGround>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -60,7 +63,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" && isOnGround.CheckOnGround(gameObject.transform, 3.5f) == "Ground")
         {
             CheckForPlayer();
         }

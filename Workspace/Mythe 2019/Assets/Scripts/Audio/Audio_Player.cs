@@ -25,10 +25,8 @@ public class Audio_Player : MonoBehaviour
 
     private void Run(bool isMoving)
     {
-        print("in audio Player");
         if (isMoving)
         {
-            print("plays");
             Run_Source.Play(0);//???
         }
         else
