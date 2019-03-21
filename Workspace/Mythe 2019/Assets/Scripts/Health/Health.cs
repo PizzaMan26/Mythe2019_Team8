@@ -10,14 +10,12 @@ public class Health : MonoBehaviour
     private Rigidbody2D _rb;
 
     private GameObject IF;
-    private GameObject GameManager;
 
     public event Action playerDead;
     public event Action<int> playerHit;
 
     void Start()
     {
-        GameManager = GameObject.Find("GameManager");
         _rb = GetComponent<Rigidbody2D>();//get's the rigidbody2D
     }
 
@@ -52,7 +50,8 @@ public class Health : MonoBehaviour
 
     public void Juggle(float amount)//resets velocity for juggling
     {
-        if (GameManager.GetComponent<IsOnGround>().CheckOnGround(transform, 3.5f) == null)
+        print(GetComponent<IsOnGround>().CheckOnGround(transform, 3.5f));
+        if (GetComponent<IsOnGround>().CheckOnGround(transform, 3.5f) != "Ground")
         {
             _rb.velocity = new Vector2(0, amount);
         }

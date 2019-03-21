@@ -56,7 +56,7 @@ public class StartAttack : MonoBehaviour
             curCD = _lightCD;
             curAttack = 1;
             _AttackBox.SetActive(true);//enables attack hitbox
-            if (GameManager.GetComponent<IsOnGround>().CheckOnGround(transform, 3f) == null)
+            if (GetComponent<IsOnGround>().CheckOnGround(transform, 3f) != "Ground")
             {
                 rb.velocity = new Vector2(0, 5);
             }

@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
-        GameManager = GameObject.Find("GameManager");
         inputHandler = GameObject.FindWithTag("InputHandler").GetComponent<InputHandler>();
         rb = GetComponent<Rigidbody2D>();
         //delicate's from the inputHandler
@@ -34,8 +33,8 @@ public class PlayerMovement : MonoBehaviour
         StopMoving();
         audioManager.PlayerLand(isMoving);
 
-        collidingTarget = GameManager.GetComponent<IsOnGround>().CheckOnGround(transform, 3f);
-        if (collidingTarget != null)
+        collidingTarget = GetComponent<IsOnGround>().CheckOnGround(transform, 3f);
+        if (collidingTarget == "Ground")
         {
             canJump = true;
             SlowDown();

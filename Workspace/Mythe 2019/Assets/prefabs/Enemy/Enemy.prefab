@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 6869302927183497734}
   - component: {fileID: 4372737909490839274}
   - component: {fileID: 6869302927183497729}
+  - component: {fileID: 8719526857837657142}
   - component: {fileID: 6869302927183497728}
   m_Layer: 0
   m_Name: Enemy
@@ -188,6 +189,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   _enemySpeed: 0.2
+--- !u!114 &8719526857837657142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6869302927183497731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38eb5dfe082dc4469644a5dfbbe15b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &6869302927183497728
 CircleCollider2D:
   m_ObjectHideFlags: 0

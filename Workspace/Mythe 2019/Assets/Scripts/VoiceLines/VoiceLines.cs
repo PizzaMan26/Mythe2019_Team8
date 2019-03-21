@@ -20,7 +20,6 @@ public class VoiceLines : MonoBehaviour
     void Awake()
     {
         enumCount = System.Enum.GetValues(typeof(Languages)).Length;
-        print(enumCount);
         source = GetComponent<AudioSource>();
     }
 

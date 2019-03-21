@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        isOnGround = GameObject.Find("GameManager").GetComponent<IsOnGround>();
+        isOnGround = GetComponent<IsOnGround>();
         rb = GetComponent<Rigidbody2D>();
     }
 
