@@ -1,12 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private int _health = 100;
+    public int health = 100;
+    public bool isPlayer = false;
     private Rigidbody2D _rb;
     private GameObject GameManager;
+
+    private GameObject IF;
+
+    public event Action playerDead;
+    public event Action<int> playerHit;
 
     void Start()
     {
@@ -16,10 +23,22 @@ public class Health : MonoBehaviour
 
     public void DealDamage(int damage)//deals damage to object
     {
-        _health = _health - damage;
-
-        if(_health <= 0)//wasted
+        if (!GetComponent<InvincibilityFrames>().isInvincible)
         {
+            health = health - damage;
+            if (isPlayer)
+            {
+                playerHit(health);
+            }
+        }
+        
+
+        if(health <= 0)//wasted
+        {
+            if (isPlayer)
+            {
+                playerDead();
+            } 
             Debug.Log("RIP in perpperonies");
         }
     }

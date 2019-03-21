@@ -14,13 +14,13 @@ public class Attack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)//send attack to the object that got hit
     {
         int curAttack = GetComponentInParent<StartAttack>().curAttack;
-        if (col.tag == "Hitbox" && curAttack == 1)
+        if (col.tag == "Enemy" && curAttack == 1)
         {
             col.GetComponent<Health>().Juggle(Lforce);
             col.GetComponent<Health>().DealDamage(_lightDamage);
         }
 
-        if (col.tag == "Hitbox" && curAttack == 2)
+        if (col.tag == "Enemy" && curAttack == 2)
         {
             col.GetComponent<Health>().OnHit(Hforce);
             col.GetComponent<Health>().DealDamage(_heavyDamage);

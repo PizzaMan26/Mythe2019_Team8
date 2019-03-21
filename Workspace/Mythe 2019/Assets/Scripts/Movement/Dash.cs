@@ -13,7 +13,6 @@ public class Dash : MonoBehaviour
 
     private InputHandler inputHandler;
 
-    // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -22,13 +21,12 @@ public class Dash : MonoBehaviour
         inputHandler.Dash += DashTowards;
     }
 
-    // Update is called once per frame
     void Update()
     {
         DashCooldown();
     }
 
-    private void DashCooldown()
+    private void DashCooldown()//cooldown of the dash
     {
         _CD -= Time.deltaTime;
         if (GetComponent<StartAttack>().curCD <= 0) {
@@ -44,12 +42,14 @@ public class Dash : MonoBehaviour
             _rb.AddForce(transform.right * force);
             _CD = cooldown;
             _isDashing = true;
+            GetComponent<InvincibilityFrames>().BeInvincible();
         }
-        else if (_CD <= 0 && value == -1)
+        else if (_CD <= 0 && value == -1)//dash right
         {
             _rb.AddForce(transform.right * -force);
             _CD = cooldown;
             _isDashing = true;
+            GetComponent<InvincibilityFrames>().StopInvincibilaty();
         }
     }
 }
