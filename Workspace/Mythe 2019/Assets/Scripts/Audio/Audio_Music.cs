@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Audio_Music : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class Audio_Music : MonoBehaviour
 
     [SerializeField]
     private AudioSource Source1, Source2;
+
+
+    [SerializeField]
+    private GameObject MusicButton;
+    [SerializeField]
+    private Sprite sprMusicOn, sprMusicOff;
 
     // Start is called before the first frame update
     void Awake()
@@ -23,6 +30,9 @@ public class Audio_Music : MonoBehaviour
     {
         Source1.mute = value;
         Source2.mute = value;
+
+        if (value) MusicButton.GetComponent<Image>().sprite = sprMusicOff;
+        else MusicButton.GetComponent<Image>().sprite = sprMusicOn;
     }
 
     void Update()

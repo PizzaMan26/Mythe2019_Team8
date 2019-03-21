@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject Menu;
 
+
     void Start()
     {
         // Find GameObjects
