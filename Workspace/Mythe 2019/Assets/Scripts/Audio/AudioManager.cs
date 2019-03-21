@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     public event Action Change_Theme;
     //Delegates Player movement
     public event Action Player_Land;
+    //delagates player movement bool
+    public event Action<bool> Player_Run;
 
     private bool Muted_Music_Status, Muted_FX_Status;
     
@@ -34,7 +36,7 @@ public class AudioManager : MonoBehaviour
             Muted_FX_Status = false;
         }
         Mute_Music(Muted_Music_Status);
-        Mute_FX(Muted_FX_Status);
+        //Mute_FX(Muted_FX_Status);
     }
 
     public void MuteMusic()
@@ -65,5 +67,11 @@ public class AudioManager : MonoBehaviour
     public void PlayerLand()
     {
         Player_Land();
+    }
+
+    public void PlayerLand(bool isMoving)
+    {
+        print("in the audio Manager");
+        Player_Run(isMoving);
     }
 }

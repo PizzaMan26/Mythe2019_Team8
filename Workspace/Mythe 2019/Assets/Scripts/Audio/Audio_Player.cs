@@ -8,15 +8,32 @@ public class Audio_Player : MonoBehaviour
 
     [SerializeField]
     private AudioSource Land_Source;
+    [SerializeField]
+    private AudioSource Run_Source;
 
     void Awake()
     {
         audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
         audioManager.Player_Land += Land;
+        audioManager.Player_Run += Run;
     }
 
     private void Land()
     {
         Land_Source.Play(0);
+    }
+
+    private void Run(bool isMoving)
+    {
+        print("in audio Player");
+        if (isMoving)
+        {
+            print("plays");
+            Run_Source.Play(0);//???
+        }
+        else
+        {
+            Run_Source.Stop();
+        }
     }
 }

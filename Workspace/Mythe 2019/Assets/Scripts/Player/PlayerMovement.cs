@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private AudioManager audioManager;
 
     [SerializeField]
     private float jumpForce = 500;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
         GameManager = GameObject.Find("GameManager");
         inputHandler = GameObject.FindWithTag("InputHandler").GetComponent<InputHandler>();
         rb = GetComponent<Rigidbody2D>();
@@ -30,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     { 
         StopMoving();
+        print(isMoving);
+        audioManager.PlayerLand(isMoving);
 
         collidingTarget = GameManager.GetComponent<IsOnGround>().CheckOnGround(transform, 3f);
         if (collidingTarget != null)

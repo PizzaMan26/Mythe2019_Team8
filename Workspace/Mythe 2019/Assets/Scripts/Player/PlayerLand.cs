@@ -7,6 +7,8 @@ public class PlayerLand : MonoBehaviour
     private AudioManager audioManager;
     private IsOnGround isOnGround;
 
+    private bool firstTimeOnGround = false;
+
     void Awake()
     {
         isOnGround = GameObject.Find("GameManager").GetComponent<IsOnGround>();
@@ -17,6 +19,11 @@ public class PlayerLand : MonoBehaviour
     {
         if (isOnGround.CheckOnGround(transform, 3f) == null)
         {
+            firstTimeOnGround = true;
+        }
+        if (isOnGround.CheckOnGround(transform, 3f) != null && firstTimeOnGround == true)
+        {
+            firstTimeOnGround = false;
             Land();
         }
     }
