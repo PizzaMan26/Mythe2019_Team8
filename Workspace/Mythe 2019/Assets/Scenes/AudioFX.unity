@@ -716,6 +716,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio
       objectReference: {fileID: 0}
+    - target: {fileID: 1671507676896275367, guid: 7f7d9a740689d9a48b091daa98193b70,
+        type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671507676896275417, guid: 7f7d9a740689d9a48b091daa98193b70,
+        type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1671507676432007251, guid: 7f7d9a740689d9a48b091daa98193b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -771,6 +781,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1671507676223795155, guid: 7f7d9a740689d9a48b091daa98193b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1671507676341788288, guid: 7f7d9a740689d9a48b091daa98193b70,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -781,16 +796,6 @@ PrefabInstance:
       propertyPath: Run_Source
       value: 
       objectReference: {fileID: 1479897386}
-    - target: {fileID: 1671507676896275367, guid: 7f7d9a740689d9a48b091daa98193b70,
-        type: 3}
-      propertyPath: Mute
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1671507676896275417, guid: 7f7d9a740689d9a48b091daa98193b70,
-        type: 3}
-      propertyPath: Mute
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7d9a740689d9a48b091daa98193b70, type: 3}
 --- !u!1001 &1835191791

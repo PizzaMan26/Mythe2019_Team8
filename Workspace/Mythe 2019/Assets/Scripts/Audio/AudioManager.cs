@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
             Muted_FX_Status = false;
         }
         Mute_Music(Muted_Music_Status);
-        //Mute_FX(Muted_FX_Status);
+        //Mute_FX(Muted_FX_Status); <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     }
 
     public void MuteMusic()
