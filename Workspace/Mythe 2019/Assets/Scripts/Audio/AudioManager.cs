@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     public event Action Player_Land, Player_Jump;
     //delagates player movement bool
     public event Action<bool> Player_Run;
+    //delagates player shouts
+    public event Action Player_Shout;
 
     private bool Muted_Music_Status, Muted_FX_Status;
     
@@ -77,5 +79,10 @@ public class AudioManager : MonoBehaviour
     public void PlayerRun(bool isMoving)
     {
         Player_Run(isMoving);
+    }
+
+    public void PlayerShout()
+    {
+        Player_Shout();
     }
 }
