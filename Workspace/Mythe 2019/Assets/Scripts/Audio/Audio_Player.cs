@@ -10,17 +10,25 @@ public class Audio_Player : MonoBehaviour
     private AudioSource Land_Source;
     [SerializeField]
     private AudioSource Run_Source;
+    [SerializeField]
+    private AudioSource Jump_Source;
 
     void Awake()
     {
         audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
         audioManager.Player_Land += Land;
         audioManager.Player_Run += Run;
+        audioManager.Player_Jump += Jump;
     }
 
     private void Land()
     {
         Land_Source.Play(0);
+    }
+
+    private void Jump()
+    {
+        Jump_Source.Play(0);
     }
 
     private void Run(bool isMoving)

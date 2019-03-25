@@ -80,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         //should happen if you press one of the jump buttons
         if (canJump == true)
         {
+            audioManager.PlayerJump();
             rb.AddForce(new Vector3(0, jumpForce, 0)); // adds force to emulate a jump.
         }
     }

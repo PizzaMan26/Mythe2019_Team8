@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     //Delegates Background Music
     public event Action Change_Theme;
     //Delegates Player movement
-    public event Action Player_Land;
+    public event Action Player_Land, Player_Jump;
     //delagates player movement bool
     public event Action<bool> Player_Run;
 
@@ -67,6 +67,11 @@ public class AudioManager : MonoBehaviour
     public void PlayerLand()
     {
         Player_Land();
+    }
+
+    public void PlayerJump()
+    {
+        Player_Jump();
     }
 
     public void PlayerRun(bool isMoving)
