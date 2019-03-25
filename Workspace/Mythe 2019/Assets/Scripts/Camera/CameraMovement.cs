@@ -4,16 +4,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-
     public GameObject target;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         FollowPlayer();
@@ -27,4 +19,15 @@ public class CameraMovement : MonoBehaviour
 
         
     }
+
+    /*private void CheckForPlatform()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up);
+
+        if (hit.collider.tag == "Ground")
+        {
+            Debug.Log("er is kaas");
+        }
+    }
+    */
 }
