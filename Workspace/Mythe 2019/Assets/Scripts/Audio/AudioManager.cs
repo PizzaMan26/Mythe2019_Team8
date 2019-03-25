@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
         Player_Land();
     }
 
-    public void PlayerLand(bool isMoving)
+    public void PlayerRun(bool isMoving)
     {
         Player_Run(isMoving);
     }

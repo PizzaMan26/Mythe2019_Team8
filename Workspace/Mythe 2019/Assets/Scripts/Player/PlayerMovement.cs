@@ -31,13 +31,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     { 
         StopMoving();
-        audioManager.PlayerLand(isMoving);
+        audioManager.PlayerRun(isMoving);
+        print(isMoving);
 
         collidingTarget = GetComponent<IsOnGround>().CheckOnGround(transform, 3f);
         if (collidingTarget == "Ground")
         {
             canJump = true;
-            SlowDown();
+            OnGroundMovement();
         }
         else
         {
@@ -62,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //slows down if player goes to fast and hits the ground
-    private void SlowDown()
+    private void OnGroundMovement()
     {
         if (rb.velocity.x > 20)
         {

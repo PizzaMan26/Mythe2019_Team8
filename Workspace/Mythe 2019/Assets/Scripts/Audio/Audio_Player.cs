@@ -25,12 +25,18 @@ public class Audio_Player : MonoBehaviour
 
     private void Run(bool isMoving)
     {
-        if (isMoving)
+        if (isMoving && !Run_Source.isPlaying)
         {
+            print("gon move");
             Run_Source.Play(0);//???
+        }
+        else if (isMoving && Run_Source.isPlaying)
+        {
+            print("still moving");
         }
         else
         {
+            print("stoped");
             Run_Source.Stop();
         }
     }
