@@ -131,5 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83ee216beca857488777cb799f026d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 2
   damageToEnemy: 0
+  bounceForce: 30000

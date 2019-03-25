@@ -17,9 +17,12 @@ GameObject:
   - component: {fileID: 6618130004562747190}
   - component: {fileID: 1943759485772590153}
   - component: {fileID: 7143646162622666327}
+  - component: {fileID: 2118086187}
+  - component: {fileID: 2118086195}
+  - component: {fileID: 2118086198}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,8 +121,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3343b4c9977c3c94995e4ed50f7b8641, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   curCD: 0
   curAttack: 0
 --- !u!114 &9150837654508013418
@@ -132,10 +135,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 251a5ccc76be2824391a1c91476e3373, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  force: 9001
-  cooldown: 1
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 20000
+  cooldown: 1.8
 --- !u!70 &6618130004562747189
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,8 +165,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 550f77a5d0d19314080b6736db0597f6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   jumpForce: 20000
 --- !u!114 &1943759485772590153
 MonoBehaviour:
@@ -175,8 +178,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c949e97196f517f499eb67abba210243, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  isPlayer: 1
 --- !u!114 &7143646162622666327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,8 +192,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd9a497bf750c98418143d72e173d456, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2118086187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618130004562747188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d5aaf68817a584e9d4fbac3be9ed5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInvincible: 0
+--- !u!114 &2118086195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618130004562747188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9a497bf750c98418143d72e173d456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2118086198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618130004562747188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38eb5dfe082dc4469644a5dfbbe15b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9120237151792655282
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,10 +300,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66878a1103dd05c44b87191b7c51f8e9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   Lforce: 5
-  Hforce: 20000
+  Hforce: 950
 --- !u!50 &5397510760272209552
 Rigidbody2D:
   serializedVersion: 4

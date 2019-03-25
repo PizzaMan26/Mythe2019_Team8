@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     public bool isPlayer = false;
     private Rigidbody2D _rb;
 
-    private GameObject IF;
+    private GameObject IF;//invincibility frames
 
     public event Action playerDead;
     public event Action<int> playerHit;
@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();//get's the rigidbody2D
+        playerHit(health);
     }
 
     public void DealDamage(int damage)//deals damage to object
