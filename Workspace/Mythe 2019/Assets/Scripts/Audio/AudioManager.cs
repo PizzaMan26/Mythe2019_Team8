@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
     public event Action<bool> Player_Run;
     //delagates player shouts
     public event Action Player_Shout;
+    //delagates player death
+    public event Action Player_Death;
 
     private bool Muted_Music_Status, Muted_FX_Status;
     
@@ -84,5 +86,10 @@ public class AudioManager : MonoBehaviour
     public void PlayerShout()
     {
         Player_Shout();
+    }
+
+    public void PlayerDeath()
+    {
+        Player_Death();
     }
 }
