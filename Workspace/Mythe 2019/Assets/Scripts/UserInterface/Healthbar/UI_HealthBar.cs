@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Healthbar : MonoBehaviour
+public class UI_HealthBar : MonoBehaviour
 {
     /* Misschien kunnen we regelen dat de ruimte tussen de achterste
      * bladzijde en het boek een var is, waardoor we een kleinbeetje kunnen
@@ -17,24 +17,32 @@ public class Healthbar : MonoBehaviour
 
 
     private int maximumHealth, currentHealth;
-    private Text text;
+    [SerializeField]
+    private Text txt_curHealth, txt_maxHealth;
+
+    //private Health playerHealth;
 
     public int MaximumHealth {
         set {
-            currentHealth = value;
+            maximumHealth = value;
+            txt_maxHealth.text = maximumHealth.ToString();
         }
     }
 
 
     void Start()
     {
-
+        //playerHealth = GameObject.FindWithTag("Player").GetComponent(Health);
+        //playerHealth.playerHit += RemoveHealth;
     }
 
-    void RemoveHealth()
+    void RemoveHealth(int amount)
     {
+        currentHealth = amount;
+        if (currentHealth < 0) currentHealth = 0;
+        
         PlayAnimation();
-        text.text = currentHealth + " / " + maximumHealth;
+        txt_curHealth.text = currentHealth.ToString();
     }
 
     // Play page tear animation
