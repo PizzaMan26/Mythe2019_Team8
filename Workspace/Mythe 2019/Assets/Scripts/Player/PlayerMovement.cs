@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private AudioManager audioManager;
 
+    private bool isMovingOnGround;
+
     [SerializeField]
     private float jumpForce = 500;
 
@@ -29,20 +31,21 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update()
-    { 
+    {
+        isMovingOnGround = false;
         StopMoving();
-        audioManager.PlayerLand(isMoving);
 
         collidingTarget = GetComponent<IsOnGround>().CheckOnGround(transform, 3f);
         if (collidingTarget == "Ground")
         {
             canJump = true;
-            SlowDown();
+            OnGroundMovement();
         }
         else
         {
             canJump = false;
         }
+        audioManager.PlayerRun(isMovingOnGround);
 
     }
 
@@ -62,8 +65,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //slows down if player goes to fast and hits the ground
-    private void SlowDown()
+    private void OnGroundMovement()
     {
+        if (isMoving == true)
+        {
+            isMovingOnGround = true;
+        }
         if (rb.velocity.x > 20)
         {
             rb.AddForce(new Vector3(-1000, 0, 0));
@@ -79,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         //should happen if you press one of the jump buttons
         if (canJump == true)
         {
+            audioManager.PlayerJump();
             rb.AddForce(new Vector3(0, jumpForce, 0)); // adds force to emulate a jump.
         }
     }

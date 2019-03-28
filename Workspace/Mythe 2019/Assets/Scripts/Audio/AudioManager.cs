@@ -10,9 +10,13 @@ public class AudioManager : MonoBehaviour
     //Delegates Background Music
     public event Action Change_Theme;
     //Delegates Player movement
-    public event Action Player_Land;
+    public event Action Player_Land, Player_Jump;
     //delagates player movement bool
     public event Action<bool> Player_Run;
+    //delagates player shouts
+    public event Action Player_Shout;
+    //delagates player death
+    public event Action Player_Death;
 
     private bool Muted_Music_Status, Muted_FX_Status;
     
@@ -36,7 +40,7 @@ public class AudioManager : MonoBehaviour
             Muted_FX_Status = false;
         }
         Mute_Music(Muted_Music_Status);
-        //Mute_FX(Muted_FX_Status);
+        //Mute_FX(Muted_FX_Status); <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     }
 
     public void MuteMusic()
@@ -69,8 +73,23 @@ public class AudioManager : MonoBehaviour
         Player_Land();
     }
 
-    public void PlayerLand(bool isMoving)
+    public void PlayerJump()
+    {
+        Player_Jump();
+    }
+
+    public void PlayerRun(bool isMoving)
     {
         Player_Run(isMoving);
+    }
+
+    public void PlayerShout()
+    {
+        Player_Shout();
+    }
+
+    public void PlayerDeath()
+    {
+        Player_Death();
     }
 }
