@@ -48,7 +48,7 @@ MonoBehaviour:
   Rock: {fileID: 1420902571269114131, guid: 25f3bfc0a012398489e4523f00f94ea2, type: 3}
   PointA: {fileID: 7876806540365293952}
   PointB: {fileID: 7876806541337134051}
-  spawnSpeed: 3
+  spawnSpeed: 1
 --- !u!1 &7876806540365293952
 GameObject:
   m_ObjectHideFlags: 0
