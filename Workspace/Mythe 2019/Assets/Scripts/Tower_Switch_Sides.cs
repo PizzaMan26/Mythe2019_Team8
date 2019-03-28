@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class Tower_Switch_Sides : MonoBehaviour
      private int nextSide = 1;
      private int currentSide = 0;
      private int previousSide = 3;
+    public Action goDown; 
+    public Action goUp; 
     //refrence to player
     [SerializeField] private GameObject player;
     void Start()
@@ -55,6 +58,7 @@ public class Tower_Switch_Sides : MonoBehaviour
             levels[previousSide].active = false;
             //spawns player add the far left edge of the cube
             player.transform.position = new Vector3((-boxSize.x / 2) + 8f, player.transform.position.y, player.transform.position.z);
+            goUp();
         }
 
         if(player.transform.position.x < -boxSize.x/ 2)
@@ -72,6 +76,7 @@ public class Tower_Switch_Sides : MonoBehaviour
             levels[previousSide].active = true;
             //spawns player add the far right edge of the cube
             player.transform.position = new Vector3((boxSize.x/2), player.transform.position.y, player.transform.position.z);
+            goDown();
         }
 
 
