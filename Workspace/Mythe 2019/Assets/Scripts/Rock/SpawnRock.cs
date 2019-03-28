@@ -6,7 +6,7 @@ public class SpawnRock : MonoBehaviour
 {
     public GameObject Rock;//rock
     public GameObject PointA;
-    public GameObject PointB;//points to spawn rocks between, A always has to be left of B;
+    public GameObject PointB;//points to spawn rocks between, A always has to be left of B
 
     public float spawnSpeed = 0;//time between spawns of the rocks
     private float rockTimer = 0;//time until a rock spawns
