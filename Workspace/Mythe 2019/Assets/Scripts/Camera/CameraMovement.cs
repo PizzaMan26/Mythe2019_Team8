@@ -6,25 +6,45 @@ public class CameraMovement : MonoBehaviour
 {
 
     public GameObject target;
-
+    [SerializeField] private Tower_Switch_Sides _tower;
+    private Vector3 _pos;
+    private bool updatingY = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _tower = GameObject.Find("Tower").GetComponent<Tower_Switch_Sides>();
+        _tower.goUp += UpdateY;
+        _tower.goDown += UpdateY;
     }
 
     // Update is called once per frame
     void Update()
     {
-        FollowPlayer();
+        if (!updatingY)
+        {
+            FollowPlayer();
+        }
+        
     }
 
     private void FollowPlayer()
     {
-        Vector3 pos = new Vector3(target.transform.position.x, transform.position.y, transform.position.z);
+         _pos = new Vector3(target.transform.position.x, transform.position.y, transform.position.z);
 
-        transform.position = Vector3.MoveTowards(transform.position, pos, 1f);
+        transform.position = Vector3.MoveTowards(transform.position, _pos, 1f);
 
         
+    }
+    private void UpdateY()
+    {
+        updatingY = true;
+        print("!");
+        _pos = new Vector3(target.transform.position.x, target.transform.position.y,transform.position.z);
+        while (updatingY)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _pos, 1f);
+            if (transform.position == _pos)
+                updatingY = false;
+        }
     }
 }
