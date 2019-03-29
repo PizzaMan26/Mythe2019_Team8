@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02bb7a9e508a1224baa3b1a2a3089447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rock: {fileID: 1420902571269114131, guid: 25f3bfc0a012398489e4523f00f94ea2, type: 3}
+  Rock: {fileID: 9198536328109776101, guid: 25f3bfc0a012398489e4523f00f94ea2, type: 3}
   PointA: {fileID: 7876806540365293952}
   PointB: {fileID: 7876806541337134051}
   spawnSpeed: 1

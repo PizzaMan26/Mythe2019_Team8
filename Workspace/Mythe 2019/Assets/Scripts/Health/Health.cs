@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
 
     public void DealDamage(int damage)//deals damage to object
     {
-        if (!GetComponent<InvincibilityFrames>().isInvincible)
+        if (!GetComponent<InvincibilityFrames>().isInvincible)//if the player isn't invincible the player takes damage
         {
             health = health - damage;
             if (isPlayer)
@@ -38,7 +38,6 @@ public class Health : MonoBehaviour
             {
                 playerDead();
             } 
-            Debug.Log("RIP in perpperonies");
         }
     }
 

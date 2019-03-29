@@ -8,6 +8,9 @@ public class HealthUI : MonoBehaviour
     private Health Player;
     private Text HealthText;
 
+    [SerializeField]
+    private GameObject Input_Pause, InputHandler, GameOver;
+
     void Awake()
     {
         Player = GameObject.FindWithTag("Player").GetComponent<Health>();
@@ -31,8 +34,17 @@ public class HealthUI : MonoBehaviour
         HealthText.text = "Health: " + health;
     }
 
-    private void Die()
+    private void Die()//Disables scripts and UI element and ends the run
     {
-        Debug.Log("BE GONE BOT!");
+        //Die animation
+        Player.GetComponent<PlayerMovement>().enabled = false;
+        Player.GetComponent<Dash>().enabled = false;
+        //if(Animation.play(0)){
+        HealthText.enabled = false;
+        Input_Pause.SetActive(false);
+        InputHandler.SetActive(false);
+        GameOver.SetActive(true);
+        //}
+
     }
 }
