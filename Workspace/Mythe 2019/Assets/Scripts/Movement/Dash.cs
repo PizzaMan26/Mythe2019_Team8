@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Dash : MonoBehaviour
 {
+    private AudioManager audioManager;
+
     private Rigidbody2D _rb;
 
     public float force = 0;
@@ -15,6 +17,7 @@ public class Dash : MonoBehaviour
 
     void Start()
     {
+        audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
         _rb = GetComponent<Rigidbody2D>();
 
         inputHandler = GameObject.FindWithTag("InputHandler").GetComponent<InputHandler>();
@@ -39,6 +42,7 @@ public class Dash : MonoBehaviour
     {
         if (_CD <= 0 && value == 1) // dash left
         {
+            audioManager.PlayerDash();
             _rb.AddForce(transform.right * force);
             _CD = cooldown;
             _isDashing = true;
@@ -46,6 +50,7 @@ public class Dash : MonoBehaviour
         }
         else if (_CD <= 0 && value == -1)//dash right
         {
+            audioManager.PlayerDash();
             _rb.AddForce(transform.right * -force);
             _CD = cooldown;
             _isDashing = true;
