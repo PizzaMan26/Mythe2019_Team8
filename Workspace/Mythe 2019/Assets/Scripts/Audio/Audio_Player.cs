@@ -12,6 +12,8 @@ public class Audio_Player : MonoBehaviour
     private AudioSource Run_Source;
     [SerializeField]
     private AudioSource Jump_Source;
+    [SerializeField]
+    private AudioSource Dash_Source;
 
     void Awake()
     {
@@ -19,6 +21,7 @@ public class Audio_Player : MonoBehaviour
         audioManager.Player_Land += Land;
         audioManager.Player_Run += Run;
         audioManager.Player_Jump += Jump;
+        audioManager.Player_Dash += Dash;
     }
 
     private void Land()
@@ -44,5 +47,10 @@ public class Audio_Player : MonoBehaviour
         {
             Run_Source.Stop();
         }
+    }
+
+    private void Dash()
+    {
+        Dash_Source.Play(0);
     }
 }

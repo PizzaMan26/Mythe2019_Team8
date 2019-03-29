@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     //Delegates Background Music
     public event Action Change_Theme;
     //Delegates Player movement
-    public event Action Player_Land, Player_Jump;
+    public event Action Player_Land, Player_Jump, Player_Dash;
     //delagates player movement bool
     public event Action<bool> Player_Run;
     //delagates player shouts
@@ -91,5 +91,10 @@ public class AudioManager : MonoBehaviour
     public void PlayerDeath()
     {
         Player_Death();
+    }
+
+    public void PlayerDash()
+    {
+        Player_Dash();
     }
 }
