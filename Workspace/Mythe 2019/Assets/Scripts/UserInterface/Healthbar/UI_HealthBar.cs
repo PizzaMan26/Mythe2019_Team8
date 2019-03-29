@@ -20,7 +20,16 @@ public class UI_HealthBar : MonoBehaviour
     [SerializeField]
     private Text txt_curHealth, txt_maxHealth;
 
-    //private Health playerHealth;
+    private Health playerHealth;
+
+    [SerializeField]
+    private float pageDelay;
+    private float pageTimer = 0;
+    private int pageAmount;
+
+    [SerializeField]
+    private GameObject page;
+
 
     public int MaximumHealth {
         set {
@@ -32,22 +41,31 @@ public class UI_HealthBar : MonoBehaviour
 
     void Start()
     {
-        //playerHealth = GameObject.FindWithTag("Player").GetComponent(Health);
-        //playerHealth.playerHit += RemoveHealth;
+        playerHealth = GameObject.FindWithTag("Player").GetComponent<Health>();
+        playerHealth.playerHit += RemoveHealth;
     }
 
     void RemoveHealth(int amount)
     {
+        pageAmount += currentHealth - amount;
         currentHealth = amount;
         if (currentHealth < 0) currentHealth = 0;
         
-        PlayAnimation();
         txt_curHealth.text = currentHealth.ToString();
     }
 
-    // Play page tear animation
-    void PlayAnimation()
+    void Update()
     {
-        
+        if(pageAmount > 0)
+        {
+            pageTimer += Time.deltaTime;
+            if(pageTimer > pageDelay)
+            {
+                pageTimer = 0;
+                pageAmount--;
+                // Instantiate page
+                Instantiate(page, transform.position, transform.rotation);
+            }
+        }
     }
 }
