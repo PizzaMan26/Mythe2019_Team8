@@ -37,9 +37,10 @@ public class CameraMovement : MonoBehaviour
     }
     private void UpdateY()
     {
+        float offset = 10;
         updatingY = true;
         print("!");
-        _pos = new Vector3(target.transform.position.x, target.transform.position.y,transform.position.z);
+        _pos = new Vector3(target.transform.position.x, target.transform.position.y+offset,transform.position.z);
         while (updatingY)
         {
             transform.position = Vector3.MoveTowards(transform.position, _pos, 1f);
