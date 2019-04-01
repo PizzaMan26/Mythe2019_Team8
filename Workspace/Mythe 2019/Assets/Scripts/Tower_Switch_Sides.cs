@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Tower_Switch_Sides : MonoBehaviour
 {
+    private bool goRight = false;
+    private bool goLeft = false;
+    private float currentRotation = 0;
+
     private Vector3 boxSize;
     //list of levels
     [SerializeField]private List<GameObject> levels = new List<GameObject>();
@@ -42,6 +46,31 @@ public class Tower_Switch_Sides : MonoBehaviour
             ChangePart();
         }
         ChangeSide();
+        if (goRight)
+        {
+            currentRotation += 1f;
+            transform.localRotation = Quaternion.Euler(0, currentRotation * nextSide, 0);
+            print(currentRotation);
+            if (currentRotation == 90)
+            {
+                print("should stop go right");
+                currentRotation = 0;
+                goRight = false;
+                currentSide = nextSide;
+            }
+        }
+        if (goLeft)
+        {
+            currentRotation += 1f;
+            transform.localRotation = Quaternion.Euler(0, currentRotation * previousSide, 0);
+            if (currentRotation == 90)
+            {
+                print("should stop go right");
+                currentRotation = 0;
+                goLeft = false;
+                currentSide = previousSide;
+            }
+        }
 
     }
 
@@ -58,23 +87,20 @@ public class Tower_Switch_Sides : MonoBehaviour
 
         if (player.transform.position.x > boxSize.x / 2)
         {
-            transform.localRotation = Quaternion.Euler(0, 90 * nextSide, 0);
-            currentSide = nextSide;
+            goRight = true;
 
             //loads next level and unloads previous 
             levels[currentSide].active = true;
             levels[nextSide].active = true;
             levels[previousSide].active = false;
             //spawns player add the far left edge of the cube
-            player.transform.position = new Vector3((-boxSize.x / 2) + 8f, player.transform.position.y, player.transform.position.z);
+            //player.transform.position = new Vector3((-boxSize.x / 2) + 8f, player.transform.position.y, player.transform.position.z);
             goUp();
         }
 
         if (player.transform.position.x < -boxSize.x / 2)
         {
-
-            transform.localRotation = Quaternion.Euler(0, 90 * previousSide, 0);
-            currentSide = previousSide;
+            goLeft = true;
 
 
             //loads prvious level and unloads next
@@ -82,7 +108,7 @@ public class Tower_Switch_Sides : MonoBehaviour
             levels[nextSide].active = false;
             levels[previousSide].active = true;
             //spawns player add the far right edge of the cube
-            player.transform.position = new Vector3((boxSize.x / 2), player.transform.position.y, player.transform.position.z);
+            //player.transform.position = new Vector3((boxSize.x / 2), player.transform.position.y, player.transform.position.z);
             goDown();
         }
     }
