@@ -8,17 +8,21 @@ public class Tower_Switch_Sides : MonoBehaviour
     private Vector3 boxSize;
     //list of levels
     [SerializeField]private List<GameObject> levels = new List<GameObject>();
-    
+    [SerializeField] private List<Collider> towerPartsColliders = new List<Collider>();
      private int nextSide = 1;
      private int currentSide = 0;
      private int previousSide = 3;
+     private int currentpart = 0;
+
+    private int temp = 0;
+
     public Action goDown; 
     public Action goUp; 
     //refrence to player
     [SerializeField] private GameObject player;
     void Start()
     {
-        boxSize = GetComponent<Collider>().bounds.size;
+        boxSize = towerPartsColliders[0].bounds.size;
         //unloads all levels
         for (int i = 0; i < levels.Count; i++)
         {
@@ -30,7 +34,18 @@ public class Tower_Switch_Sides : MonoBehaviour
         levels[previousSide].active = false;
     }
 
-        void Update()
+    void FixedUpdate()
+    {
+        temp++;
+        if (temp % 180 == 0)
+        {
+            ChangePart();
+        }
+        ChangeSide();
+
+    }
+
+    void ChangeSide()
     {
         //updates the next and preveous side
 
@@ -41,13 +56,7 @@ public class Tower_Switch_Sides : MonoBehaviour
         if (previousSide < 0) { previousSide = 3; }
 
 
-
- 
-
-
-
-
-        if (player.transform.position.x> boxSize.x/2)
+        if (player.transform.position.x > boxSize.x / 2)
         {
             transform.localRotation = Quaternion.Euler(0, 90 * nextSide, 0);
             currentSide = nextSide;
@@ -61,10 +70,8 @@ public class Tower_Switch_Sides : MonoBehaviour
             goUp();
         }
 
-        if(player.transform.position.x < -boxSize.x/ 2)
+        if (player.transform.position.x < -boxSize.x / 2)
         {
-
-
 
             transform.localRotation = Quaternion.Euler(0, 90 * previousSide, 0);
             currentSide = previousSide;
@@ -75,14 +82,20 @@ public class Tower_Switch_Sides : MonoBehaviour
             levels[nextSide].active = false;
             levels[previousSide].active = true;
             //spawns player add the far right edge of the cube
-            player.transform.position = new Vector3((boxSize.x/2), player.transform.position.y, player.transform.position.z);
+            player.transform.position = new Vector3((boxSize.x / 2), player.transform.position.y, player.transform.position.z);
             goDown();
         }
-
-
     }
 
- 
+    public void ChangePart()
+    {
 
-
+        boxSize = towerPartsColliders[currentpart].bounds.size;
+        if (player.transform.position.y > boxSize.y/2)
+        {
+            print("higher");
+            currentpart++;
+        }
+        
+    }
 }
