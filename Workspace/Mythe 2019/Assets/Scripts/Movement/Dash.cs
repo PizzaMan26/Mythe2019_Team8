@@ -30,7 +30,8 @@ public class Dash : MonoBehaviour
     {
         _CD -= Time.deltaTime;
         if (GetComponent<StartAttack>().curCD <= 0) {
-            _isDashing = false;                       
+            _isDashing = false;
+            GetComponent<InvincibilityFrames>().StopInvincibilaty();
         }
     }
 
@@ -49,7 +50,7 @@ public class Dash : MonoBehaviour
             _rb.AddForce(transform.right * -force);
             _CD = cooldown;
             _isDashing = true;
-            GetComponent<InvincibilityFrames>().StopInvincibilaty();
+            GetComponent<InvincibilityFrames>().BeInvincible();
         }
     }
 }

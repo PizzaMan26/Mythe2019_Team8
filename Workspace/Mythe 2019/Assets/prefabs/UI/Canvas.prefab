@@ -1709,6 +1709,7 @@ GameObject:
   - component: {fileID: 5619161069427416761}
   - component: {fileID: 8926388622654371226}
   - component: {fileID: 1415171157099458416}
+  - component: {fileID: 690154740}
   m_Layer: 5
   m_Name: Respawn
   m_TagString: Untagged
@@ -1812,9 +1813,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8926388622654371226}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 690154740}
+        m_MethodName: RespawnButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &690154740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900759511712354032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c371eaa8b2e70e4db10c029f5a73283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthText: {fileID: 1183742423547572588}
+  Input_Pause: {fileID: 1285212947}
+  InputHandler: {fileID: 3255644051543459490}
+  GameOver: {fileID: 1784152433}
 --- !u!1 &5730475174589679297
 GameObject:
   m_ObjectHideFlags: 0

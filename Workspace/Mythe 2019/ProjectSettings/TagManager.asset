@@ -7,6 +7,12 @@ TagManager:
   - InputRight
   - Canvas
   - InputLeft
+  - InputHandler
+  - PauseMenu
+  - Ground
+  - AudioManager
+  - CheckpointManager
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
