@@ -36,11 +36,9 @@ public class Tower_Switch_Sides : MonoBehaviour
 
     void FixedUpdate()
     {
-        temp++;
-        if (temp % 180 == 0)
-        {
-            ChangePart();
-        }
+
+        ChangePart();
+        
         ChangeSide();
 
     }
@@ -91,10 +89,13 @@ public class Tower_Switch_Sides : MonoBehaviour
     {
 
         boxSize = towerPartsColliders[currentpart].bounds.size;
-        if (player.transform.position.y > boxSize.y/2)
+        if (player.transform.position.y > towerPartsColliders[currentpart].gameObject.transform.position.y + (boxSize.y/2))
         {
-            print("higher");
-            currentpart++;
+            if (currentpart != towerPartsColliders.Count -1)
+            {
+                currentpart++;
+            }
+            
         }
         
     }
