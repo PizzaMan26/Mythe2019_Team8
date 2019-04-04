@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();//get's the rigidbody2D
-        playerHit(health);
+        //playerHit(health);
     }
 
     public void DealDamage(int damage)//deals damage to object

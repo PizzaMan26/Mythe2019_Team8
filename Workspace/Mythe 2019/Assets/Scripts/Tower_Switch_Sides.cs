@@ -41,6 +41,37 @@ public class Tower_Switch_Sides : MonoBehaviour
         
         ChangeSide();
 
+        //sorry dat het zo slecht geschreven is maar dit is het systeem die andere levels zal deactivaten en ik had maar 1 uur
+        if (currentSide == 0)
+        {
+            levels[0].active = true;
+            levels[1].active = false;
+            levels[2].active = false;
+            levels[3].active = false;
+        }
+        else if(currentSide == 1)
+        {
+            levels[0].active = false;
+            levels[1].active = true;
+            levels[2].active = false;
+            levels[3].active = false;
+        }
+        else if(currentSide == 2)
+        {
+            levels[0].active = false;
+            levels[1].active = false;
+            levels[2].active = true;
+            levels[3].active = false;
+        }
+        else if(currentSide == 3)
+        {
+            levels[0].active = false;
+            levels[1].active = false;
+            levels[2].active = false;
+            levels[3].active = true;
+        }
+
+
     }
 
     void ChangeSide()
