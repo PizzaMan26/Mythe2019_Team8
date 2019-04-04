@@ -1,25 +1,12 @@
 fileFormatVersion: 2
-guid: b2f84303ef09b9c4c8e9e2c2319addca
+guid: 07b870eb657101d47abb264ca5662633
 TextureImporter:
   fileIDToRecycleName:
-    21300000: deathbyrockfinished_0
-    21300002: deathbyrockfinished_1
-    21300004: deathbyrockfinished_2
-    21300006: deathbyrockfinished_4
-    21300008: deathbyrockfinished_5
-    21300010: deathbyrockfinished_9
-    21300012: deathbyrockfinished_13
-    21300014: deathbyrockfinished_15
-    21300016: deathbyrockfinished_17
-    21300018: deathbyrockfinished_3
-    21300020: deathbyrockfinished_6
-    21300022: deathbyrockfinished_7
-    21300024: deathbyrockfinished_8
-    21300026: deathbyrockfinished_10
-    21300028: deathbyrockfinished_11
-    21300030: deathbyrockfinished_12
-    21300032: deathbyrockfinished_14
-    21300034: deathbyrockfinished_16
+    21300000: dashfinished_0
+    21300002: dashfinished_1
+    21300004: dashfinished_2
+    21300006: dashfinished_3
+    21300008: dashfinished_4
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -124,13 +111,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: deathbyrockfinished_0
+      name: dashfinished_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 696
-        height: 558
+        width: 366
+        height: 487
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,19 +125,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af0127615ac996b439d0f3cf57a86691
+      spriteID: fa8e36105e2a1b74098f4cd8d5e7cc83
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: deathbyrockfinished_1
+      name: dashfinished_1
       rect:
         serializedVersion: 2
-        x: 696
+        x: 987
         y: 0
-        width: 696
-        height: 558
+        width: 358
+        height: 487
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfbfaf72abedce84ab4b3889dd0b7235
+      spriteID: ed63660d03fb8e14c89c4e20c018382c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: deathbyrockfinished_2
+      name: dashfinished_2
       rect:
         serializedVersion: 2
-        x: 1392
-        y: 0
-        width: 696
-        height: 558
+        x: 2117
+        y: 35
+        width: 579
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,19 +165,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ba24b740e2377945a44622b774085cd
+      spriteID: 1681ba5645df4bb46970f11a042b6cbb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: deathbyrockfinished_3
+      name: dashfinished_3
       rect:
         serializedVersion: 2
-        x: 2088
+        x: 3532
         y: 0
-        width: 696
-        height: 558
+        width: 317
+        height: 487
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,19 +185,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7acef9b27b97ea544a6743036b5647e9
+      spriteID: f5af0fb6d7aa90c45aa09b9c04f15bae
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: deathbyrockfinished_4
+      name: dashfinished_4
       rect:
         serializedVersion: 2
-        x: 2784
+        x: 4584
         y: 0
-        width: 696
-        height: 558
+        width: 366
+        height: 487
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,87 +205,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 975c667ff61e35b40a6685fc28eeb4f8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: deathbyrockfinished_5
-      rect:
-        serializedVersion: 2
-        x: 3480
-        y: 0
-        width: 696
-        height: 558
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fe56fb1b3a3c9548b36f0ca5901d17d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: deathbyrockfinished_6
-      rect:
-        serializedVersion: 2
-        x: 4176
-        y: 0
-        width: 696
-        height: 558
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42fda864ba5c5184a9ae927f93c2a44c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: deathbyrockfinished_7
-      rect:
-        serializedVersion: 2
-        x: 4872
-        y: 0
-        width: 696
-        height: 558
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a4df0219b143164984b3859d2d3a1db
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: deathbyrockfinished_8
-      rect:
-        serializedVersion: 2
-        x: 5568
-        y: 0
-        width: 696
-        height: 558
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81a890da4b0aaaa419ef6fa86850f80d
+      spriteID: 5c9ce70e78dd1c4409a587d7c40dfa09
       vertices: []
       indices: 
       edges: []
@@ -306,7 +213,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 62cfb0d1c3076bf4297a3808e2befcd6
+    spriteID: c87a1f112ba8bd04da92fabdd1488e48
     vertices: []
     indices: 
     edges: []
