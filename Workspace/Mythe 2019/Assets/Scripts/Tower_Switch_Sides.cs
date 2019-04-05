@@ -39,18 +39,14 @@ public class Tower_Switch_Sides : MonoBehaviour
         //makes sides loop
         if (nextSide >= 4) nextSide = 0;
         if (previousSide < 0) { previousSide = 3; }
-
-
-
- 
-
-
-
+        
 
         if (player.transform.position.x> boxSize.x/2)
         {
             transform.localRotation = Quaternion.Euler(0, 90 * nextSide, 0);
             currentSide = nextSide;
+
+            DestroyRocks();//Destroyes all rocks in scene
 
             //loads next level and unloads previous 
             levels[currentSide].active = true;
@@ -63,12 +59,10 @@ public class Tower_Switch_Sides : MonoBehaviour
 
         if(player.transform.position.x < -boxSize.x/ 2)
         {
-
-
-
             transform.localRotation = Quaternion.Euler(0, 90 * previousSide, 0);
             currentSide = previousSide;
 
+            DestroyRocks();//Destroyes all rocks in scene
 
             //loads prvious level and unloads next
             levels[currentSide].active = true;
@@ -80,6 +74,13 @@ public class Tower_Switch_Sides : MonoBehaviour
         }
 
 
+    }
+
+    private void DestroyRocks()//Destroyes all rocks in scenes
+    {
+        GameObject[] rocks = GameObject.FindGameObjectsWithTag("Rock");
+        foreach (GameObject rock in rocks)
+            Destroy(rock);
     }
 
  
