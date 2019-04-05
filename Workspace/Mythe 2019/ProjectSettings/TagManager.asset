@@ -13,6 +13,7 @@ TagManager:
   - AudioManager
   - CheckpointManager
   - Checkpoint
+  - Tower
   layers:
   - Default
   - TransparentFX

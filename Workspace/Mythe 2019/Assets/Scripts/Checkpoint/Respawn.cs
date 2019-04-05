@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Respawn : MonoBehaviour
 {
-    private GameObject CheckpointManager;
-    private GameObject Player;
+    private GameObject CheckpointManager, Player, Tower;
 
     private Health health;
     [SerializeField]
@@ -20,7 +19,8 @@ public class Respawn : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         health = Player.GetComponent<Health>();
         CheckpointManager = GameObject.FindGameObjectWithTag("CheckpointManager");
-        
+        Tower = GameObject.FindGameObjectWithTag("Tower");
+
     }
 
     public void RespawnButton()
@@ -31,12 +31,42 @@ public class Respawn : MonoBehaviour
         }
         else
         {
-            Vector3 pos = new Vector3(CheckpointManager.GetComponent<CheckpointManager>().GetCheckpoint().transform.position.x,
-                                  CheckpointManager.GetComponent<CheckpointManager>().GetCheckpoint().transform.position.y,
-                                  Player.transform.position.z);
+            ResetGame();
+        } 
+    }
 
-            Player.transform.position = pos;
+    private void ResetGame()
+    {
+        
+        switch (CheckpointManager.GetComponent<CheckpointManager>().GetCheckpointSide())
+        {
+            case 0:
+                Debug.Log("OOF!");
+                break;
+            case 1:
+                Tower.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                Debug.Log("WEEEEE!1");
+                break;
+            case 2:
+                Tower.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                Debug.Log("WEEEEE!2");
+                break;
+            case 3:
+                Tower.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                Debug.Log("WEEEEE!3");
+                break;
+            case 4:
+                Tower.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                Debug.Log("WEEEEE!4");
+                break;
         }
+
+
+        Vector3 pos = new Vector3(CheckpointManager.GetComponent<CheckpointManager>().GetPosition().x,
+                                  CheckpointManager.GetComponent<CheckpointManager>().GetPosition().y, 
+                                  Player.transform.position.z);
+        Player.transform.position = pos;
+
         Player.GetComponent<PlayerMovement>().enabled = true;
         Player.GetComponent<Dash>().enabled = true;
         HealthText.enabled = true;
@@ -45,5 +75,6 @@ public class Respawn : MonoBehaviour
         GameOver.SetActive(false);
         Player.GetComponent<Health>().DealDamage(-10);
 
+        
     }
 }
