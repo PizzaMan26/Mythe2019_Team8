@@ -7,6 +7,10 @@ TagManager:
   - InputRight
   - Canvas
   - InputLeft
+  - InputHandler
+  - PauseMenu
+  - Ground
+  - AudioManager
   layers:
   - Default
   - TransparentFX
@@ -16,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Ground
   - 
   - 
   - 
