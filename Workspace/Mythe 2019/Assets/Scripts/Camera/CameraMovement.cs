@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-
     public GameObject target;
     [SerializeField] private Tower_Switch_Sides _tower;
     private Vector3 _pos;
@@ -17,7 +16,6 @@ public class CameraMovement : MonoBehaviour
         _tower.goDown += UpdateY;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!updatingY)
@@ -35,6 +33,7 @@ public class CameraMovement : MonoBehaviour
 
         
     }
+
     private void UpdateY()
     {
         float offset = 10;
