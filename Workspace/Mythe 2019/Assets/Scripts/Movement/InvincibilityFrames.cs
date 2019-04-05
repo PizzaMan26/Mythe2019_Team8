@@ -10,6 +10,7 @@ public class InvincibilityFrames : MonoBehaviour
     public void BeInvincible()
     {
         isInvincible = true;
+        GetComponent<AnimationHandler>().DashAnim();
     }
 
     public void StopInvincibilaty()

@@ -5,13 +5,8 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour
 {
     private InputHandler inputHandler;
-    private Health health;
     private InvincibilityFrames IF;
     private Animator anim;
-    private bool hasDashed = false;
-    private AnimationState state;
-    private AnimationClip dashAnimation;
-
     private SpriteRenderer SR;
 
     private void Awake()
@@ -23,7 +18,6 @@ public class AnimationHandler : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         inputHandler = GameObject.Find("InputHandler").GetComponent<InputHandler>();
-        health = GameObject.Find("Health").GetComponent<Health>();
         IF = gameObject.GetComponent<InvincibilityFrames>();
         inputHandler.Jump += JumpAnim;
         inputHandler.Walk += RunAnim;
@@ -59,11 +53,6 @@ public class AnimationHandler : MonoBehaviour
     public void DashAnim()
     {
         anim.SetTrigger("doDash");
-    }
-
-    private void DeathAnim()
-    {
-        anim.SetBool("doDead", true);
     }
 
 }
