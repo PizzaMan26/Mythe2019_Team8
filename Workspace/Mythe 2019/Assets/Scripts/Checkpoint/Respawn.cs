@@ -7,12 +7,15 @@ public class Respawn : MonoBehaviour
 {
     private GameObject CheckpointManager, Player, Tower;
 
+    [SerializeField]
+    private int healthReset;
+
     private Health health;
     [SerializeField]
     private Text HealthText;
 
     [SerializeField]
-    private GameObject Input_Pause, InputHandler, GameOver;
+    private GameObject Input_Pause, InputHandler, GameOver, HealthUI;
 
     void Start()
     {
@@ -41,22 +44,22 @@ public class Respawn : MonoBehaviour
         switch (CheckpointManager.GetComponent<CheckpointManager>().GetCheckpointSide())
         {
             case 0:
-                Debug.Log("OOF!");
+                Debug.LogError("No side set to " + gameObject.name);
                 break;
             case 1:
-                Tower.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                Tower.GetComponent<Tower_Switch_Sides>().OutsideChangeSide(0);
                 Debug.Log("WEEEEE!1");
                 break;
             case 2:
-                Tower.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                Tower.GetComponent<Tower_Switch_Sides>().OutsideChangeSide(1);
                 Debug.Log("WEEEEE!2");
                 break;
             case 3:
-                Tower.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                Tower.GetComponent<Tower_Switch_Sides>().OutsideChangeSide(2);
                 Debug.Log("WEEEEE!3");
                 break;
             case 4:
-                Tower.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                Tower.GetComponent<Tower_Switch_Sides>().OutsideChangeSide(3);
                 Debug.Log("WEEEEE!4");
                 break;
         }
@@ -70,10 +73,11 @@ public class Respawn : MonoBehaviour
         Player.GetComponent<PlayerMovement>().enabled = true;
         Player.GetComponent<Dash>().enabled = true;
         HealthText.enabled = true;
+        HealthUI.SetActive(true);
         Input_Pause.SetActive(true);
         InputHandler.SetActive(true);
         GameOver.SetActive(false);
-        Player.GetComponent<Health>().DealDamage(-10);
+        Player.GetComponent<Health>().DealDamage(-healthReset);
 
         
     }
