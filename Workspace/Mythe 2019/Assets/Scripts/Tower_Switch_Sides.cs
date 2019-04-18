@@ -48,6 +48,7 @@ public class Tower_Switch_Sides : MonoBehaviour
             levels[1].active = false;
             levels[2].active = false;
             levels[3].active = false;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
         else if(currentSide == 1)
         {
@@ -72,6 +73,11 @@ public class Tower_Switch_Sides : MonoBehaviour
         }
 
 
+    }
+
+    public void OutsideChangeSide(int side)
+    {
+        currentSide = side;        
     }
 
     void ChangeSide()
