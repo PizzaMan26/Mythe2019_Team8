@@ -8758,6 +8758,26 @@ SpriteShapeRenderer:
   m_LocalAABB:
     m_Center: {x: -31.668901, y: -1.0800653, z: -0.0004675751}
     m_Extent: {x: 7.8810177, y: 7.2182136, z: 0.00053242495}
+--- !u!1 &1910167287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1671507676896275365, guid: 7f7d9a740689d9a48b091daa98193b70,
+    type: 3}
+  m_PrefabInstance: {fileID: 2070705129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1910167292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910167287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6272a068eb14761428e99b08f837a385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minGoal: 10
+  maxGoal: 50
 --- !u!1 &1932480927
 GameObject:
   m_ObjectHideFlags: 0
