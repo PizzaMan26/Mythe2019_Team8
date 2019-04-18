@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndTrigger : MonoBehaviour
 {
@@ -33,15 +34,20 @@ public class EndTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         temp = true;
-            
-           
-        
-        
+        GameObject.Find("InputHandler").active = false;
+
+        _player.GetComponent<Animator>().SetTrigger("LookUp");
     }
 
     private IEnumerator ThumbsUP()
     {
         yield return new WaitForSeconds(1f);
         anim.SetTrigger("thumbsUp");
+        StartCoroutine(ReturnToMenu());
+    }
+    private IEnumerator ReturnToMenu()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("MainMenu");
     }
 }
