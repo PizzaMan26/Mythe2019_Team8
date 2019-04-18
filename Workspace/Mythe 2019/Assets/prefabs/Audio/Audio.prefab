@@ -812,11 +812,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5e6c6d474bb5f444f983694f19167615, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5cbc57e6199d8e54da4835bd8f185aa0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -888,7 +888,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -908,11 +908,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d0bd6297e13ea83418ac4f6e57347e42, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2ec361ca32f119b4d8c152826638831b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1009,8 +1009,8 @@ MonoBehaviour:
   Source1: {fileID: 1671507676896275367}
   Source2: {fileID: 1671507676896275417}
   MusicButton: {fileID: 0}
-  sprMusicOn: {fileID: 0}
-  sprMusicOff: {fileID: 0}
+  sprMusicOn: {fileID: 21300000, guid: 1c649b9360b83714da54a3ef2e02d641, type: 3}
+  sprMusicOff: {fileID: 21300000, guid: 61246f6cb77433f4f9ceb61cc56d9b00, type: 3}
 --- !u!1 &1671507677308636680
 GameObject:
   m_ObjectHideFlags: 0

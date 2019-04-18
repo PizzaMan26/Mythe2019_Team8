@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Audio_Music : MonoBehaviour
 {
     private AudioManager audioManager;
+    private RandomSwitch randomSwitch;
     private float volume = 1;
     private bool whatTheme = false;
 
@@ -23,7 +24,8 @@ public class Audio_Music : MonoBehaviour
     {
         audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
         audioManager.Mute_Music += Mute;
-        audioManager.Change_Theme += SwitchTheme;
+        randomSwitch = GetComponent<RandomSwitch>();
+        randomSwitch.Switch += SwitchTheme;
     }
 
     private void Mute(bool value)
@@ -52,6 +54,14 @@ public class Audio_Music : MonoBehaviour
     private void SwitchTheme()
     {
         whatTheme = !whatTheme;
+        if (whatTheme)
+        {
+            Source2.Play(0);
+        }
+        else
+        {
+            Source1.Play(0);
+        }
     }
 
 }
