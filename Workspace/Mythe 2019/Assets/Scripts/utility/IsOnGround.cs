@@ -12,7 +12,6 @@ public class IsOnGround : MonoBehaviour
         Debug.DrawRay(new Vector3(trans.position.x, trans.position.y - adjustDown, trans.position.z), trans.TransformDirection(Vector3.down) * .3f, Color.green);
         if (hit.collider != null)//check the raycast hits anything if it does it will return the string of the tag hit
         {
-            print(hit.collider.gameObject.tag);
             return (hit.collider.gameObject.tag);
         }
         else //when the raycast doesn't hit anything it will return null

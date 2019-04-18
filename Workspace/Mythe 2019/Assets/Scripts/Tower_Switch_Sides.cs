@@ -96,7 +96,6 @@ public class Tower_Switch_Sides : MonoBehaviour
             levels[previousSide].active = false;
             //spawns player add the far left edge of the cube
             player.transform.position = new Vector3((-boxSize.x / 2) + 8f, player.transform.position.y, player.transform.position.z);
-            goUp();
         }
 
         if (player.transform.position.x < -boxSize.x / 2)
