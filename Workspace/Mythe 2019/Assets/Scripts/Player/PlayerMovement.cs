@@ -30,12 +30,12 @@ public class PlayerMovement : MonoBehaviour
         inputHandler.Walk += Walk;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         isMovingOnGround = false;
         StopMoving();
 
-        collidingTarget = GetComponent<IsOnGround>().CheckOnGround(transform, 3f);
+        collidingTarget = GetComponent<IsOnGround>().CheckOnGround(transform, 2.5f);
         if (collidingTarget == "Ground")
         {
             canJump = true;

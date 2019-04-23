@@ -28,13 +28,15 @@ public class EndTrigger : MonoBehaviour
         if (temp)
         {
             _GD.transform.Translate(Vector2.down*Time.deltaTime, Space.World);
+            GameObject.Find("MainCamera").GetComponent<Camera>().orthographicSize += .0055f;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         temp = true;
-        GameObject.Find("InputHandler").active = false;
+        GameObject.Find("Canvas").active = false;
+
 
         _player.GetComponent<Animator>().SetTrigger("LookUp");
     }

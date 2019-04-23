@@ -17,11 +17,11 @@ public class PlayerLand : MonoBehaviour
 
     void Update()
     {
-        if (isOnGround.CheckOnGround(transform, 3f) != "Ground")
+        if (isOnGround.CheckOnGround(transform, 2.5f) != "Ground")
         {
             firstTimeOnGround = true;
         }
-        if (isOnGround.CheckOnGround(transform, 3f) == "Ground" && firstTimeOnGround == true)
+        if (isOnGround.CheckOnGround(transform, 2.5f) == "Ground" && firstTimeOnGround == true)
         {
             firstTimeOnGround = false;
             Land();
