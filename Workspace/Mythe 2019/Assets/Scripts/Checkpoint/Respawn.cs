@@ -78,7 +78,5 @@ public class Respawn : MonoBehaviour
         InputHandler.SetActive(true);
         GameOver.SetActive(false);
         Player.GetComponent<Health>().DealDamage(-healthReset);
-
-        
     }
 }

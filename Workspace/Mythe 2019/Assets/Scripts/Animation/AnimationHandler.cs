@@ -9,6 +9,8 @@ public class AnimationHandler : MonoBehaviour
     private Animator anim;
     private SpriteRenderer SR;
 
+    private Health health;
+
     private void Awake()
     {
         SR = GetComponent<SpriteRenderer>();
@@ -21,6 +23,9 @@ public class AnimationHandler : MonoBehaviour
         IF = gameObject.GetComponent<InvincibilityFrames>();
         inputHandler.Jump += JumpAnim;
         inputHandler.Walk += RunAnim;
+
+        health = GameObject.Find("Player").GetComponent<Health>();
+        health.playerDead += DeathAnim;
 
     }
 
@@ -53,6 +58,16 @@ public class AnimationHandler : MonoBehaviour
     public void DashAnim()
     {
         anim.SetTrigger("doDash");
+    }
+
+    public void DeathAnim()
+    {
+        anim.SetBool("doDead", true);
+    }
+
+    public void Respawn()
+    {
+        anim.SetBool("doDead", false);
     }
 
 }
